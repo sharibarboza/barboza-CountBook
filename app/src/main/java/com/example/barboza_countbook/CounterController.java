@@ -1,6 +1,7 @@
 package com.example.barboza_countbook;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -9,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -37,6 +39,11 @@ public class CounterController {
         return counterList;
     }
 
+    public void addNewCounter(Counter counter) {
+        counterList.add(counter);
+        saveInFile();
+    }
+
     private void loadFromFile() {
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
@@ -50,6 +57,27 @@ public class CounterController {
             counterList = gson.fromJson(in, listType);
         } catch (FileNotFoundException e) {
             counterList = new ArrayList<Counter>();
+        }
+    }
+
+    private void saveInFile() {
+        try {
+            FileOutputStream fos = context.openFileOutput(FILENAME,
+                    Context.MODE_PRIVATE);
+
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
+
+            Gson gson = new Gson();
+            gson.toJson(counterList, out);
+            out.flush();
+
+            fos.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
         }
     }
 }

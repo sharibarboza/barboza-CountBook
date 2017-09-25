@@ -12,10 +12,13 @@ import java.util.Date;
 
 public class AddCounterActivity extends AppCompatActivity {
 
+    private Counter newCounter;
     private EditText inputName, inputValue, inputComment;
     private String name, comment, date;
     private int value;
     Button addBtn, cancelBtn;
+
+    private CounterController cc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,8 @@ public class AddCounterActivity extends AppCompatActivity {
 
         addBtn = (Button) findViewById(R.id.addBtn);
         cancelBtn = (Button) findViewById(R.id.cancelBtn);
+
+        cc = CounterApplication.getCounterController(getApplicationContext());
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +51,7 @@ public class AddCounterActivity extends AppCompatActivity {
     public void addCounter() {
         if (validate()) {
             initalize();
+            cc.addNewCounter(newCounter);
             finish();
         }
     }
@@ -55,7 +61,7 @@ public class AddCounterActivity extends AppCompatActivity {
         value = Integer.parseInt(inputValue.getText().toString().trim());
         comment = inputComment.getText().toString().trim();
 
-        Counter newCounter = new Counter(name, value);
+        newCounter = new Counter(name, value);
         newCounter.setName(name);
         newCounter.setInitVal(value);
         newCounter.setDate(initalizeDate());

@@ -1,5 +1,6 @@
 package com.example.barboza_countbook;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,11 +16,15 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static android.provider.Telephony.Mms.Part.FILENAME;
+
 public class MainActivity extends AppCompatActivity {
 
+    private static final String FILENAME = "file.sav";
     private int totalCount;
-    private CounterController counters;
     private ListView counterListView;
+    private ArrayList<Counter> counterList;
+    private CounterController cc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        counters = new CounterController(MainActivity.this);
         counterListView = (ListView) findViewById(R.id.oldCounterList);
 
     }
@@ -48,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        counters.configCounterList();
-        ArrayList<Counter> counterList = counters.getCounterList();
+        cc = CounterApplication.getCounterController(this);
+        cc.configCounterList();
+        counterList = cc.getCounterList();
         ArrayAdapter<Counter> adapter = new ArrayAdapter<Counter>(this, R.layout.list_item, counterList);
         counterListView.setAdapter(adapter);
 
@@ -79,4 +84,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
