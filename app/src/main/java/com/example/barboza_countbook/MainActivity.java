@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,7 +18,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private int totalCount;
-    private ArrayList<Counter> counterList;
+    private CounterController counters;
+    private ListView counterListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +35,12 @@ public class MainActivity extends AppCompatActivity {
                 setResult(RESULT_OK);
                 Intent addCounterIntent = new Intent(MainActivity.this, AddCounterActivity.class);
                 startActivity(addCounterIntent);
-                
+
             }
         });
+
+        counters = new CounterController(MainActivity.this);
+        counterListView = (ListView) findViewById(R.id.oldCounterList);
 
     }
 
@@ -42,10 +48,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        counterList = new ArrayList<Counter>();
+        counters.configCounterList();
+        ArrayList<Counter> counterList = counters.getCounterList();
+        ArrayAdapter<Counter> adapter = new ArrayAdapter<Counter>(this, R.layout.list_item, counterList);
+        counterListView.setAdapter(adapter);
 
         TextView textView = (TextView) findViewById(R.id.totalCount);
-        textView.setText("Total Counters: " + counterList.size());
+        String totalCountersText = "Total Counters: " + counterList.size();
+        textView.setText(totalCountersText);
     }
 
     @Override

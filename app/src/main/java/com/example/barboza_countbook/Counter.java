@@ -19,7 +19,7 @@ public class Counter {
      * @param name name of the counter
      * @param initVal the value the counter will be reset to
      */
-    public Counter(String name, int initVal) {
+    Counter(String name, int initVal) {
         this.name = name;
         this.initVal = initVal;
         this.currentVal = initVal;

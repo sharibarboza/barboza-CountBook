@@ -7,4 +7,5 @@
     <string name="add_new_counter">Add New Counter</string>
     <string name="add">ADD</string>
     <string name="cancel">CANCEL</string>
+    <string name="total_counters">Total Counters:</string>
 </resources>
