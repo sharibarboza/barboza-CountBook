@@ -1,20 +1,22 @@
 package com.example.barboza_countbook;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 import static android.provider.Telephony.Mms.Part.FILENAME;
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String FILENAME = "file.sav";
     private int totalCount;
     private ListView counterListView;
+    private Counters counters;
     private ArrayList<Counter> counterList;
     private CounterController cc;
     private CustomAdapter adapter;
@@ -46,17 +49,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        cc = CounterApplication.getCounterController(this);
+        cc.configCounters();
+        counters = cc.getCounters();
+        counterList = counters.getList();
+        counterListView = (ListView) findViewById(R.id.listView);
+
+        // Register context for list view
+        registerForContextMenu(counterListView);
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        cc = CounterApplication.getCounterController(this);
-        cc.configCounterList();
-        counterList = cc.getCounterList();
-
-        counterListView = (ListView) findViewById(R.id.listView);
         adapter = new CustomAdapter(this, R.layout.list_item, counterList);
         counterListView.setAdapter(adapter);
 
@@ -85,6 +92,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Taken from http://wptrafficanalyzer.in/blog/creating-a-floating-contextual-menu-in-android/
+     * 2017-9-25
+     */
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.actions , menu);
     }
 
 }

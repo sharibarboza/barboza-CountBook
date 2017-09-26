@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 /**
  * Created by sharidanbarboza on 2017-09-24.
@@ -25,39 +26,44 @@ public class CounterController {
 
     private static final String FILENAME = "file.sav";
     private Context context;
-    private ArrayList<Counter> counterList;
+    private Counters counters;
 
     CounterController(Context context) {
         this.context = context;
     }
 
-    public void configCounterList() {
-        loadFromFile();
+    public void configCounters() {
+        ArrayList<Counter> counterList = loadFromFile();
+        counters = new Counters(counterList);
     }
 
-    public ArrayList<Counter> getCounterList() {
-        return counterList;
+    public Counters getCounters() {
+        return counters;
     }
 
-    public void addNewCounter(Counter counter) {
-        counterList.add(counter);
+    public void addCounter(Counter counter) {
+        counters.add(counter);
         saveInFile();
     }
 
-    private void loadFromFile() {
+    private ArrayList<Counter> loadFromFile() {
+        ArrayList<Counter> counterList;
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 
             Gson gson = new Gson();
 
-            //Taken from https://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylist
-            // 2017-09-19
+            //Modified from https://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylist
+            // 2017-9-25
             Type listType = new TypeToken<ArrayList<Counter>>(){}.getType();
             counterList = gson.fromJson(in, listType);
         } catch (FileNotFoundException e) {
             counterList = new ArrayList<Counter>();
+        } catch (IOException e) {
+            throw new RuntimeException();
         }
+        return counterList;
     }
 
     private void saveInFile() {
@@ -68,7 +74,7 @@ public class CounterController {
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
 
             Gson gson = new Gson();
-            gson.toJson(counterList, out);
+            gson.toJson(counters.getList(), out);
             out.flush();
 
             fos.close();

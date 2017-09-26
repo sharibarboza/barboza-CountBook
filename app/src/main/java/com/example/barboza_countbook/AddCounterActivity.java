@@ -51,7 +51,7 @@ public class AddCounterActivity extends AppCompatActivity {
     public void addCounter() {
         if (validate()) {
             initalize();
-            cc.addNewCounter(newCounter);
+            cc.addCounter(newCounter);
             finish();
         }
     }
