@@ -16,7 +16,7 @@ public class AddCounterActivity extends AppCompatActivity {
     private EditText inputName, inputValue, inputComment;
     private String name, comment, date;
     private int value;
-    Button addBtn, cancelBtn;
+    private Button addBtn, cancelBtn;
 
     private CounterController cc;
 
@@ -49,14 +49,14 @@ public class AddCounterActivity extends AppCompatActivity {
     }
 
     public void addCounter() {
-        if (validate()) {
+        if (CounterValidator.validate(this, inputName, inputValue, null)) {
             initalize();
             cc.addCounter(newCounter);
             finish();
         }
     }
 
-    public void initalize() {
+    private void initalize() {
         name = inputName.getText().toString().trim();
         value = Integer.parseInt(inputValue.getText().toString().trim());
         comment = inputComment.getText().toString().trim();
@@ -64,49 +64,10 @@ public class AddCounterActivity extends AppCompatActivity {
         newCounter = new Counter(name, value);
         newCounter.setName(name);
         newCounter.setInitVal(value);
-        newCounter.setDate(initalizeDate());
+        newCounter.setDate(CounterValidator.initalizeDate(this));
         if (comment.length() > 0) {
             newCounter.setComment(comment);
         }
     }
-
-    public String initalizeDate() {
-        Date currentDate = new Date();
-        return new SimpleDateFormat(this.getString(R.string.date_format)).format(currentDate);
-    }
-
-    public boolean validate() {
-        boolean valid;
-        String tempName = inputName.getText().toString();
-        String tempValue = inputValue.getText().toString().trim();
-
-        if (tempName.isEmpty()) {
-            Toast.makeText(this, this.getString(R.string.name_required), Toast.LENGTH_LONG).show();
-            valid = false;
-        } else if (tempValue.isEmpty()) {
-            Toast.makeText(this, this.getString(R.string.value_required), Toast.LENGTH_LONG).show();
-            valid = false;
-        } else if (!isInteger(tempValue)) {
-            Toast.makeText(this, this.getString(R.string.is_num), Toast.LENGTH_LONG).show();
-            valid = false;
-        } else if (Integer.parseInt(tempValue) < 0) {
-            Toast.makeText(this, this.getString(R.string.is_positive), Toast.LENGTH_LONG).show();
-            valid = false;
-        } else {
-            valid = true;
-        }
-        return valid;
-    }
-
-    public boolean isInteger(String input) {
-        boolean isInteger = true;
-        try {
-            Integer.parseInt(input);
-        } catch (NumberFormatException e) {
-            isInteger = false;
-        }
-        return isInteger;
-    }
-
 
 }

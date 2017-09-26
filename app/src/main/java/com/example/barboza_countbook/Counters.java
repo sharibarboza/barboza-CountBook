@@ -40,6 +40,10 @@ public class Counters {
         counterList.remove(position);
         counterMap.remove(counter);
     }
+
+    public Counter get(int position) {
+        return counterList.get(position);
+    }
     
     private void setCounterMap() {
         counterMap = new LinkedHashMap<Counter,String>();

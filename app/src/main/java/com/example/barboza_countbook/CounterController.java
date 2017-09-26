@@ -66,6 +66,15 @@ public class CounterController {
         saveInFile();
     }
 
+    /**
+     * Get a specific counter according to its position in the array
+     * @param position position of counter in the array
+     * @return Counter object
+     */
+    public Counter getCounter(int position) {
+        return counters.get(position);
+    }
+
     private ArrayList<Counter> loadFromFile() {
         ArrayList<Counter> counterList;
         try {
