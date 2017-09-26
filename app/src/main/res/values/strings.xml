@@ -13,4 +13,7 @@
     <string name="value_required">Initial value is required</string>
     <string name="is_num">"Inital value must be a number"</string>
     <string name="is_positive">Initial value must be positive</string>
+    <string name="menu_reset">Reset</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
 </resources>
