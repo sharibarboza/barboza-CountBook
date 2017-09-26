@@ -32,17 +32,37 @@ public class CounterController {
         this.context = context;
     }
 
+    /**
+     * Initalizes counter array either by loading from a file or creating an empty one
+     */
     public void configCounters() {
         ArrayList<Counter> counterList = loadFromFile();
         counters = new Counters(counterList);
     }
 
+    /**
+     * Returns the array list of counters
+     * @return the array list of counters
+     */
     public Counters getCounters() {
         return counters;
     }
 
+    /**
+     * Adds a new counter
+     * @param counter Counter object
+     */
     public void addCounter(Counter counter) {
         counters.add(counter);
+        saveInFile();
+    }
+
+    /**
+     * Deletes a counter
+     * @param position index of counter in counter array
+     */
+    public void deleteCounter(int position) {
+        counters.delete(position);
         saveInFile();
     }
 

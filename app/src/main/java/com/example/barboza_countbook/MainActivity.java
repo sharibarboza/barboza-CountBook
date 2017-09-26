@@ -66,10 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CustomAdapter(this, R.layout.list_item, counterList);
         counterListView.setAdapter(adapter);
-
-        TextView textView = (TextView) findViewById(R.id.totalCount);
-        String totalCountersText = "Total Counters: " + counterList.size();
-        textView.setText(totalCountersText);
+        updateTotal();
     }
 
     @Override
@@ -94,14 +91,39 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Taken from http://wptrafficanalyzer.in/blog/creating-a-floating-contextual-menu-in-android/
-     * 2017-9-25
-     */
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+        // Taken from http://wptrafficanalyzer.in/blog/creating-a-floating-contextual-menu-in-android/
+        // 2017-9-25
         super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.actions , menu);
     }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        // Taken from https://developer.android.com/guide/topics/ui/menus.html#PopupMenu
+        // 2017-9-26
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.menu_delete:
+                cc.deleteCounter(info.position);
+                adapter.notifyDataSetChanged();
+                updateTotal();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    /**
+     * Changes the value of total counters text view usually called after adding
+     * or deleting a counter.
+     */
+    private void updateTotal() {
+        TextView textView = (TextView) findViewById(R.id.totalCount);
+        String totalCountersText = "Total Counters: " + adapter.getCount();
+        textView.setText(totalCountersText);
+    }
+
 
 }
