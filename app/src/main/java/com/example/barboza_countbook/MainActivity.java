@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView counterListView;
     private ArrayList<Counter> counterList;
     private CounterController cc;
+    private CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +41,10 @@ public class MainActivity extends AppCompatActivity {
                 setResult(RESULT_OK);
                 Intent addCounterIntent = new Intent(MainActivity.this, AddCounterActivity.class);
                 startActivity(addCounterIntent);
+                adapter.notifyDataSetChanged();
 
             }
         });
-
-        counterListView = (ListView) findViewById(R.id.oldCounterList);
 
     }
 
@@ -55,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
         cc = CounterApplication.getCounterController(this);
         cc.configCounterList();
         counterList = cc.getCounterList();
-        ArrayAdapter<Counter> adapter = new ArrayAdapter<Counter>(this, R.layout.list_item, counterList);
+
+        counterListView = (ListView) findViewById(R.id.listView);
+        adapter = new CustomAdapter(this, R.layout.list_item, counterList);
         counterListView.setAdapter(adapter);
 
         TextView textView = (TextView) findViewById(R.id.totalCount);

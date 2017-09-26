@@ -72,7 +72,7 @@ public class AddCounterActivity extends AppCompatActivity {
 
     public String initalizeDate() {
         Date currentDate = new Date();
-        return new SimpleDateFormat("yyyy-mm-dd").format(currentDate);
+        return new SimpleDateFormat(this.getString(R.string.date_format)).format(currentDate);
     }
 
     public boolean validate() {
@@ -81,16 +81,16 @@ public class AddCounterActivity extends AppCompatActivity {
         String tempValue = inputValue.getText().toString().trim();
 
         if (tempName.isEmpty()) {
-            Toast.makeText(this, "Counter name is required", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, this.getString(R.string.name_required), Toast.LENGTH_LONG).show();
             valid = false;
         } else if (tempValue.isEmpty()) {
-            Toast.makeText(this, "Initial value is required", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, this.getString(R.string.value_required), Toast.LENGTH_LONG).show();
             valid = false;
         } else if (!isInteger(tempValue)) {
-            Toast.makeText(this, "Inital value must be a number", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, this.getString(R.string.is_num), Toast.LENGTH_LONG).show();
             valid = false;
         } else if (Integer.parseInt(tempValue) < 0) {
-            Toast.makeText(this, "Initial value must be positive", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, this.getString(R.string.is_positive), Toast.LENGTH_LONG).show();
             valid = false;
         } else {
             valid = true;

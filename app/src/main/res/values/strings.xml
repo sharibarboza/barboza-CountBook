@@ -8,4 +8,9 @@
     <string name="add">ADD</string>
     <string name="cancel">CANCEL</string>
     <string name="total_counters">Total Counters:</string>
+    <string name="date_format">yyyy-mm-dd</string>
+    <string name="name_required">Counter name is required</string>
+    <string name="value_required">Initial value is required</string>
+    <string name="is_num">"Inital value must be a number"</string>
+    <string name="is_positive">Initial value must be positive</string>
 </resources>

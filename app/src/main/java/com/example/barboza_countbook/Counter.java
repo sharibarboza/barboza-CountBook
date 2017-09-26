@@ -107,4 +107,13 @@ public class Counter {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    /**
+     * Representing Counter object in a string
+     * @return
+     */
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }
