@@ -11,7 +11,8 @@ public class EditCounterActivity extends AppCompatActivity {
 
     private CounterController cc;
     private EditText editName, editCurrent, editValue, editComment;
-    private String name, current, value, comment;
+    private String name, comment;
+    private int current, value;
     private Intent intent;
     private Counter counter;
     private Button editBtn, cancelBtn;
@@ -65,10 +66,32 @@ public class EditCounterActivity extends AppCompatActivity {
     public void updateCounter() {
         if (CounterValidator.validate(this, editName, editValue, editCurrent)) {
             initialize();
+            finish();
         }
     }
 
     private void initialize() {
+        name = editName.getText().toString().trim();
+        current = Integer.parseInt(editCurrent.getText().toString().trim());
+        value = Integer.parseInt(editValue.getText().toString().trim());
+        comment = editComment.getText().toString().trim();
 
+        if (!name.equals(counter.getName())) {
+            counter.setName(name);
+        }
+
+        if (current != counter.getCurrentVal()) {
+            counter.setCurrentVal(current);
+        }
+
+        if (value != counter.getInitVal()) {
+            counter.setInitVal(value);
+        }
+
+        if (!comment.equals(counter.getComment())) {
+            counter.setComment(comment);
+        }
+
+        counter.setDate(CounterValidator.initalizeDate(getApplicationContext()));
     }
 }

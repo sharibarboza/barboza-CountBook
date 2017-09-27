@@ -11,7 +11,7 @@
     <string name="edit">EDIT</string>
     <string name="cancel">CANCEL</string>
     <string name="total_counters">Total Counters:</string>
-    <string name="date_format">yyyy-mm-dd</string>
+    <string name="date_format">yyyy-MM-dd</string>
     <string name="name_required">Counter name is required</string>
     <string name="value_required">value is required</string>
     <string name="is_num">"value must be a number"</string>

@@ -9,13 +9,11 @@ import java.util.LinkedHashMap;
  * Created by sharidanbarboza on 2017-09-25.
  */
 
-public class Counters {
-    private LinkedHashMap<Counter,String> counterMap;
+public class Counters {;
     private ArrayList<Counter> counterList;
 
     Counters(ArrayList<Counter> counterList) {
         this.counterList = counterList;
-        setCounterMap();
     }
 
     public ArrayList<Counter> getList() {
@@ -28,7 +26,6 @@ public class Counters {
      */
     public void add(Counter counter) {
         counterList.add(counter);
-        counterMap.put(counter, counter.getName());
     }
 
     /**
@@ -36,20 +33,11 @@ public class Counters {
      * @param position the index of the counter in the array
      */
     public void delete(int position) {
-        Counter counter = counterList.get(position);
         counterList.remove(position);
-        counterMap.remove(counter);
     }
 
     public Counter get(int position) {
         return counterList.get(position);
-    }
-    
-    private void setCounterMap() {
-        counterMap = new LinkedHashMap<Counter,String>();
-        for (Counter counter : counterList) {
-            counterMap.put(counter, counter.getName());
-        }
     }
 
 }
