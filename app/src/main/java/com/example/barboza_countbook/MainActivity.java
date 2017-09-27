@@ -110,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
                 updateTotal();
                 return true;
+            case R.id.menu_edit:
+                editCounter(info);
             default:
                 return super.onContextItemSelected(item);
         }
@@ -123,6 +125,18 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.totalCount);
         String totalCountersText = "Total Counters: " + adapter.getCount();
         textView.setText(totalCountersText);
+    }
+
+    /**
+     * Edit a counter and call edit counter activity
+     * @param info specific list view counter tapped by user to edit
+     */
+    private void editCounter(AdapterContextMenuInfo info) {
+        setResult(RESULT_OK);
+        Intent editCounterIntent = new Intent(MainActivity.this, EditCounterActivity.class);
+        editCounterIntent.putExtra("position", info.position);
+        startActivity(editCounterIntent);
+        adapter.notifyDataSetChanged();
     }
 
 

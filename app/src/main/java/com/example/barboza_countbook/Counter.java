@@ -22,6 +22,7 @@ public class Counter {
     Counter(String name, int initVal) {
         this.name = name;
         this.initVal = initVal;
+        this.currentVal = initVal;
         this.comment = "";
     }
 
@@ -68,6 +69,14 @@ public class Counter {
     }
 
     /**
+     * Sets the counter's current value.
+     * @param currentVal the current value
+     */
+    public void setCurrentVal(int currentVal) {
+        this.currentVal = currentVal;
+    }
+
+    /**
      * Gets the inital value of the counter.
      * @return the inital value
      */
@@ -81,7 +90,6 @@ public class Counter {
      */
     public void setInitVal(int initVal) {
         this.initVal = initVal;
-        this.currentVal = initVal;
     }
 
     /**
