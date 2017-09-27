@@ -23,4 +23,5 @@
     <string name="edit_toast">Counter updated</string>
     <string name="delete_toast">Counter deleted</string>
     <string name="reset_toast">Counter reset</string>
+    <string name="last_updated">Last updated</string>
 </resources>

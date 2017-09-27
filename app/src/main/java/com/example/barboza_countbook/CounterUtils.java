@@ -14,13 +14,13 @@ import java.util.Date;
  * This is a utility class with static methods only
  */
 
-public final class CounterValidator {
+public final class CounterUtils {
 
     /**
      * Private constructor
      * Prevents the class from being constructed
      */
-    private CounterValidator() {}
+    private CounterUtils() {}
 
     /**
      * Create a new date by taking the current date and converting it to a formatted string

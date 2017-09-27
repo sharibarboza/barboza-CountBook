@@ -8,9 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class AddCounterActivity extends AppCompatActivity {
 
     private Counter newCounter;
@@ -53,7 +50,7 @@ public class AddCounterActivity extends AppCompatActivity {
     }
 
     public void addCounter() {
-        if (CounterValidator.validate(this, inputName, inputValue, null)) {
+        if (CounterUtils.validate(this, inputName, inputValue, null)) {
             initalize();
             cc.addCounter(newCounter);
             Toast.makeText(context, context.getString(R.string.add_toast),
@@ -70,7 +67,7 @@ public class AddCounterActivity extends AppCompatActivity {
         newCounter = new Counter(name, value);
         newCounter.setName(name);
         newCounter.setInitVal(value);
-        newCounter.setDate(CounterValidator.initalizeDate(this));
+        newCounter.setDate(CounterUtils.initalizeDate(this));
         if (comment.length() > 0) {
             newCounter.setComment(comment);
         }

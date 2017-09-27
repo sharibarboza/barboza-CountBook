@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class EditCounterActivity extends AppCompatActivity {
 
     private CounterController cc;
     private EditText editName, editCurrent, editValue, editComment;
+    private TextView editDate;
     private String name, comment;
     private int current, value;
     private Intent intent;
@@ -38,12 +40,17 @@ public class EditCounterActivity extends AppCompatActivity {
         editCurrent = (EditText) findViewById(R.id.editCurrent);
         editValue = (EditText) findViewById(R.id.editValue);
         editComment = (EditText) findViewById(R.id.editComment);
+        editDate = (TextView) findViewById(R.id.editDate);
 
         // Set text for counter's current fields
         editName.setText(counter.getName());
         editCurrent.setText(String.valueOf(counter.getCurrentVal()));
         editValue.setText(String.valueOf(counter.getInitVal()));
         editComment.setText(counter.getComment());
+
+        // Set up display for counter date
+        String lastUpdate = context.getString(R.string.last_updated) + " " + counter.getDate();
+        editDate.setText(lastUpdate);
 
         // Set up buttons
         editBtn = (Button) findViewById(R.id.editBtn);
@@ -67,7 +74,7 @@ public class EditCounterActivity extends AppCompatActivity {
     }
 
     public void updateCounter() {
-        if (CounterValidator.validate(this, editName, editValue, editCurrent)) {
+        if (CounterUtils.validate(this, editName, editValue, editCurrent)) {
             initialize();
             Toast.makeText(context, context.getString(R.string.edit_toast),
                     Toast.LENGTH_SHORT).show();
@@ -97,6 +104,6 @@ public class EditCounterActivity extends AppCompatActivity {
             counter.setComment(comment);
         }
 
-        counter.setDate(CounterValidator.initalizeDate(context));
+        counter.setDate(CounterUtils.initalizeDate(context));
     }
 }

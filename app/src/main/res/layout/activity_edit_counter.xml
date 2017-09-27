@@ -13,15 +13,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
         android:text="@string/edit_counter"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="80dp"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
@@ -32,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editName"
                 android:hint="@string/input_name"
-                android:layout_marginBottom="15dp"/>
+                android:layout_marginBottom="10dp"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -42,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editValue"
                 android:hint="@string/input_value"
-                android:layout_marginBottom="15dp"/>
+                android:layout_marginBottom="10dp"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -52,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editCurrent"
                 android:hint="@string/current_value"
-                android:layout_marginBottom="15dp"/>
+                android:layout_marginBottom="10dp"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -75,5 +76,14 @@
             android:text="@string/cancel"
             android:id="@+id/cancelBtnEdit"/>
     </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/editDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="TextView" />
 
 </RelativeLayout>
