@@ -67,8 +67,16 @@ public class CounterController {
     }
 
     /**
+     * Resets a counter
+     * @param position index of counter in counter array
+     */
+    public void resetCounter(int position) {
+        counters.reset(position);
+    }
+
+    /**
      * Get a specific counter according to its position in the array
-     * @param position position of counter in the array
+     * @param position index of counter in counter array
      * @return Counter object
      */
     public Counter getCounter(int position) {
