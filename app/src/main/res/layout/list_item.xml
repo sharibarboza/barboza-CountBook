@@ -16,10 +16,11 @@
         android:background="@color/colorGray"
         android:textColor="@color/colorValueBg"
         android:text="TextView"
+        android:textStyle="bold"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
         android:gravity="right"
-        android:textSize="38sp" />
+        android:textSize="34sp" />
 
     <TextView
         android:id="@+id/nameView"
@@ -32,9 +33,11 @@
         android:layout_toLeftOf="@+id/currentCountView"
         android:layout_toStartOf="@+id/currentCountView"
         android:text="TextView"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/dateView"
@@ -44,6 +47,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:text="TextView"
+        android:textStyle="italic"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_toLeftOf="@+id/currentCountView"
