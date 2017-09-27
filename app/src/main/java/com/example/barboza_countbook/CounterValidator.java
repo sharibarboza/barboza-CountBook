@@ -52,7 +52,7 @@ public final class CounterValidator {
 
         if (tempName.isEmpty()) {
             Toast.makeText(context, context.getString(R.string.name_required),
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (!validateValue(context, tempInit, "Initial ")) {
             valid = false;
@@ -77,15 +77,15 @@ public final class CounterValidator {
 
         if (value.isEmpty()) {
             Toast.makeText(context, countType + context.getString(R.string.value_required),
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (!isInteger(value)) {
             Toast.makeText(context, countType + context.getString(R.string.is_num),
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (Integer.parseInt(value) < 0) {
             Toast.makeText(context, countType + context.getString(R.string.is_positive),
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             valid = true;

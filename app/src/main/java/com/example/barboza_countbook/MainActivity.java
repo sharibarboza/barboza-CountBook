@@ -1,5 +1,6 @@
 package com.example.barboza_countbook;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Counter> counterList;
     private CounterController cc;
     private CustomAdapter adapter;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        context = MainActivity.this;
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setResult(RESULT_OK);
-                Intent addCounterIntent = new Intent(MainActivity.this, AddCounterActivity.class);
+                Intent addCounterIntent = new Intent(context, AddCounterActivity.class);
                 startActivity(addCounterIntent);
                 adapter.notifyDataSetChanged();
-
             }
         });
 
@@ -104,21 +107,18 @@ public class MainActivity extends AppCompatActivity {
         // Taken from https://developer.android.com/guide/topics/ui/menus.html#PopupMenu
         // 2017-9-26
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        int position = info.position;
+
         switch (item.getItemId()) {
             case R.id.menu_delete:
-                cc.deleteCounter(info.position);
-                adapter.notifyDataSetChanged();
-                updateTotal();
+                deleteCounter(position);
                 return true;
             case R.id.menu_edit:
-                setResult(RESULT_OK);
-                Intent editCounterIntent = new Intent(MainActivity.this, EditCounterActivity.class);
-                editCounterIntent.putExtra("position", info.position);
-                startActivity(editCounterIntent);
-                adapter.notifyDataSetChanged();
+                editCounter(position);
+                return true;
             case R.id.menu_reset:
-                cc.resetCounter(info.position);
-                adapter.notifyDataSetChanged();
+                resetCounter(position);
+                return true;
             default:
                 return super.onContextItemSelected(item);
         }
@@ -134,6 +134,25 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(totalCountersText);
     }
 
+    public void deleteCounter(int position) {
+        cc.deleteCounter(position);
+        adapter.notifyDataSetChanged();
+        Toast.makeText(this, this.getString(R.string.delete_toast), Toast.LENGTH_SHORT).show();
+        updateTotal();
+    }
 
+    public void editCounter(int position) {
+        setResult(RESULT_OK);
+        Intent editCounterIntent = new Intent(context, EditCounterActivity.class);
+        editCounterIntent.putExtra("position", position);
+        startActivity(editCounterIntent);
+        adapter.notifyDataSetChanged();
+    }
+
+    public void resetCounter(int position) {
+        cc.resetCounter(position);
+        adapter.notifyDataSetChanged();
+        Toast.makeText(this, this.getString(R.string.reset_toast), Toast.LENGTH_SHORT).show();
+    }
 
 }

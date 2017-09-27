@@ -19,4 +19,8 @@
     <string name="menu_reset">Reset</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_delete">Delete</string>
+    <string name="add_toast">New counter added</string>
+    <string name="edit_toast">Counter updated</string>
+    <string name="delete_toast">Counter deleted</string>
+    <string name="reset_toast">Counter reset</string>
 </resources>
