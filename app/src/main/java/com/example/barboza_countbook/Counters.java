@@ -37,15 +37,6 @@ public class Counters {;
     }
 
     /**
-     * Resets a counter to it's initial value
-     * @param position the index of the counter in the array
-     */
-    public void reset(int position) {
-        Counter counter = counterList.get(position);
-        counter.setCurrentVal(counter.getInitVal());
-    }
-
-    /**
      * Gets a counter at the specific position
      * @param position the index of the counter in the array
      * @return a Counter object

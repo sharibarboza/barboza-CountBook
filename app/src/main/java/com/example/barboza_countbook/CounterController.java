@@ -71,7 +71,8 @@ public class CounterController {
      * @param position index of counter in counter array
      */
     public void resetCounter(int position) {
-        counters.reset(position);
+        Counter counter = counters.get(position);
+        counter.setCurrentVal(counter.getInitVal());
     }
 
     /**
