@@ -9,6 +9,7 @@
     <string name="edit_counter">Edit Counter</string>
     <string name="add">ADD</string>
     <string name="edit">EDIT</string>
+    <string name="reset">RESET</string>
     <string name="cancel">CANCEL</string>
     <string name="total_counters">Total Counters:</string>
     <string name="date_format">yyyy-MM-dd</string>
@@ -16,7 +17,6 @@
     <string name="value_required">value is required</string>
     <string name="is_num">"value must be a number"</string>
     <string name="is_positive">value must be positive</string>
-    <string name="menu_reset">Reset</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_delete">Delete</string>
     <string name="add_toast">New counter added</string>
@@ -24,4 +24,6 @@
     <string name="delete_toast">Counter deleted</string>
     <string name="reset_toast">Counter reset</string>
     <string name="last_updated">Last updated</string>
+    <string name="up">+</string>
+    <string name="down">-</string>
 </resources>

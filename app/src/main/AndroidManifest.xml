@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddCounterActivity" />
-        <activity android:name=".EditCounterActivity"></activity>
+        <activity android:name=".EditCounterActivity" />
     </application>
 
 </manifest>
