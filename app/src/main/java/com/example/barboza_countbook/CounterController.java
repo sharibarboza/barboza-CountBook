@@ -68,11 +68,30 @@ public class CounterController {
 
     /**
      * Resets a counter
-     * @param position index of counter in counter array
+     * @param counter Counter object
      */
-    public void resetCounter(int position) {
-        Counter counter = counters.get(position);
+    public void resetCounter(Counter counter) {
         counter.setCurrentVal(counter.getInitVal());
+        saveInFile();
+    }
+
+    /**
+     * Increments a counter's current value
+     * @param counter Counter object
+     */
+    public void incrementCounter(Counter counter) {
+        int oldValue = counter.getCurrentVal();
+        counter.setCurrentVal(oldValue + 1);
+        saveInFile();
+    }
+
+    /**
+     * Decrements a counter's current value
+     * @param counter Counter object
+     */
+    public void decrementCounter(Counter counter) {
+        int oldValue = counter.getCurrentVal();
+        counter.setCurrentVal(oldValue - 1);
     }
 
     /**
