@@ -125,11 +125,17 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-                // Decrement counter value when down button is clicked
+                // Decrement counter value when down button is clicked.
                 downBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cc.decrementCounter(counter);
+                        try {
+                            cc.decrementCounter(counter);
+                        } catch (NegativeValueException e) {
+                            // Notify user that they cannot count below 0
+                            Toast.makeText(context, context.getString(R.string.negative_value),
+                                    Toast.LENGTH_SHORT).show();
+                        }
                         adapter.notifyDataSetChanged();
 
                         // Update value in dialog

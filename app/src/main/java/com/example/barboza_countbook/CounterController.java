@@ -101,12 +101,17 @@ public class CounterController {
     }
 
     /**
-     * Decrements a counter's current value
+     * Decrements a counter's current value.
+     * Throws an exception when attempting to decrement to negative values.
      * @param counter Counter object
      */
-    public void decrementCounter(Counter counter) {
+    public void decrementCounter(Counter counter) throws NegativeValueException {
         int oldValue = counter.getCurrentVal();
-        counter.setCurrentVal(oldValue - 1);
+        if (oldValue < 1) {
+            throw new NegativeValueException();
+        } else {
+            counter.setCurrentVal(oldValue - 1);
+        }
     }
 
     /**
