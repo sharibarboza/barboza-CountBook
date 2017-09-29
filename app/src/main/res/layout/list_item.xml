@@ -8,12 +8,11 @@
 
     <TextView
         android:id="@+id/currentCountView"
-        android:layout_width="125dip"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="@color/colorGray"
         android:textColor="@color/colorValueBg"
         android:text="TextView"
         android:textStyle="bold"
@@ -34,7 +33,7 @@
         android:layout_toStartOf="@+id/currentCountView"
         android:text="TextView"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorHeader"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textSize="20sp" />

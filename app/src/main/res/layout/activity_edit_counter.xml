@@ -14,7 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/edit_counter"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textColor="@color/colorValueBg"
+        android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView" />
@@ -66,15 +68,15 @@
                 android:layout_marginBottom="30dp"/>
         </android.support.design.widget.TextInputLayout>
         <Button
+            android:id="@+id/editBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/edit"
-            android:id="@+id/editBtn"/>
+            android:text="@string/edit" />
         <Button
+            android:id="@+id/cancelBtnEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/cancel"
-            android:id="@+id/cancelBtnEdit"/>
+            android:text="@string/cancel" />
     </android.support.design.widget.TextInputLayout>
 
     <TextView
