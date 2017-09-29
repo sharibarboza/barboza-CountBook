@@ -3,6 +3,8 @@ package com.example.barboza_countbook;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -79,9 +81,11 @@ public class MainActivity extends AppCompatActivity {
                 // Get counter
                 final Counter counter = cc.getCounter(position);
 
-                // Set the counter name
+                // Set the counter name and comment
                 TextView dialogName = (TextView) v.findViewById(R.id.dialogName);
+                TextView dialogComment = (TextView) v.findViewById(R.id.dialogComment);
                 dialogName.setText(counter.getName());
+                dialogComment.setText(counter.getComment());
 
                 // Set the current value
                 final TextView dialogValue = (TextView) v.findViewById(R.id.dialogValue);
@@ -91,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 Button upBtn = (Button) v.findViewById(R.id.increment);
                 Button downBtn = (Button) v.findViewById(R.id.decrement);
                 Button resetBtn = (Button) v.findViewById(R.id.reset);
+                Button doneBtn = (Button) v.findViewById(R.id.done);
 
                 // Increment counter value when up button is clicked
                 upBtn.setOnClickListener(new View.OnClickListener() {
@@ -131,8 +136,16 @@ public class MainActivity extends AppCompatActivity {
                 });
 
                 // Build and display the dialog
-                AlertDialog dialog = builder.create();
+                final AlertDialog dialog = builder.create();
                 dialog.show();
+
+                // Exit alert dialog
+                doneBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.cancel();
+                    }
+                });
 
             }
         });
@@ -152,21 +165,6 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

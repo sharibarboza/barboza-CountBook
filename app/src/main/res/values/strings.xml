@@ -9,6 +9,7 @@
     <string name="edit_counter">Edit Counter</string>
     <string name="add">ADD</string>
     <string name="edit">EDIT</string>
+    <string name="done">DONE</string>
     <string name="reset">RESET</string>
     <string name="cancel">CANCEL</string>
     <string name="total_counters">Total Counters:</string>
