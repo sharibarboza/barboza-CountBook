@@ -45,6 +45,8 @@ public class EditCounterActivity extends AppCompatActivity {
         cc = CounterApplication.getCounterController(getApplicationContext());
 
         // Get the counter to edit
+        // Taken from https://stackoverflow.com/questions/34120858/how-do-i-pass-listview-data-to-another-activity
+        // 2017-9-27
         intent = getIntent();
         int position = intent.getExtras().getInt("position");
         counter = cc.getCounter(position);

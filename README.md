@@ -24,6 +24,7 @@ The app should allow the user to:
 * [Android custom dialog - Create Android Alertdialog with a custom layout](https://www.youtube.com/watch?v=plnLs6aST1M&t=758s)
 * [Custom ArrayAdapter for a ListView (Android)](https://devtut.wordpress.com/2011/06/09/custom-arrayadapter-for-a-listview-android/)
 * [Stackoverflow - How to handle the click event in Listview in android?](https://stackoverflow.com/questions/17851687/how-to-handle-the-click-event-in-listview-in-android)
+* [Stackoverflow - How do I pass listView data to another activity?](https://stackoverflow.com/questions/34120858/how-do-i-pass-listview-data-to-another-activity)
 * [Creating a floating contextual menu in Android](http://wptrafficanalyzer.in/blog/creating-a-floating-contextual-menu-in-android/)
 
 ## License

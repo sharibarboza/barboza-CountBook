@@ -130,6 +130,9 @@ public class CounterController {
      */
     private ArrayList<Counter> loadFromFile() {
         ArrayList<Counter> counterList;
+
+        // Taken from https://github.com/ta301fall2017/lonelyTwitter
+        // 2017-9-24
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
@@ -152,6 +155,8 @@ public class CounterController {
      * Save the counter array into the file.
      */
     public void saveInFile() {
+        // Taken from https://github.com/ta301fall2017/lonelyTwitter
+        // 2017-9-24
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME,
                     Context.MODE_PRIVATE);

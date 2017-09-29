@@ -24,6 +24,8 @@ public class CounterApplication extends Application {
      * @return the Counter controller object
      */
     public static CounterController getCounterController(Context context) {
+        // Taken from https://github.com/abramhindle/FillerCreepForAndroid
+        // September 2017-9-26
         if (counterController == null) {
             counterController = new CounterController(context);
         }

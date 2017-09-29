@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         counterListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Taken from https://www.youtube.com/watch?v=plnLs6aST1M&t=758s
+                // 2017-9-27
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
                 // Set the view
@@ -256,6 +258,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void editCounter(int position) {
         setResult(RESULT_OK);
+
+        // Taken from https://stackoverflow.com/questions/34120858/how-do-i-pass-listview-data-to-another-activity
+        // 2017-9-27
         Intent editCounterIntent = new Intent(context, EditCounterActivity.class);
         editCounterIntent.putExtra("position", position);
         startActivity(editCounterIntent);
