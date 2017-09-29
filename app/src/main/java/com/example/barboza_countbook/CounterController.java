@@ -19,6 +19,13 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 /**
+ * CounterController
+ *
+ * The controller, which is responsible for handling events between the view activities
+ * and the counter models. The controller translates to the models what to change based
+ * on actions made from the views. In turn, it relays back to the views the correct and
+ * updated data to be shown.
+ *
  * Created by sharidanbarboza on 2017-09-24.
  */
 
@@ -28,6 +35,10 @@ public class CounterController {
     private Context context;
     private Counters counters;
 
+    /**
+     * Constructs the counter controller.
+     * @param context the application context
+     */
     CounterController(Context context) {
         this.context = context;
     }
@@ -99,7 +110,7 @@ public class CounterController {
     }
 
     /**
-     * Get a specific counter according to its position in the array
+     * Gets a specific counter according to its position in the array
      * @param position index of counter in counter array
      * @return Counter object
      */
@@ -107,6 +118,11 @@ public class CounterController {
         return counters.get(position);
     }
 
+    /**
+     * Responsible for loading the saved counter data. If there is nothing saved,
+     * then created a brand new counter array.
+     * @return the counter array
+     */
     private ArrayList<Counter> loadFromFile() {
         ArrayList<Counter> counterList;
         try {
@@ -127,6 +143,9 @@ public class CounterController {
         return counterList;
     }
 
+    /**
+     * Save the counter array into the file.
+     */
     public void saveInFile() {
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME,

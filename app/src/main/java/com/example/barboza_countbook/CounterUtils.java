@@ -8,10 +8,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by sharidanbarboza on 2017-09-26.
+ * CounterUtils
  *
- * Shared helper methods that validate a counter's input fields.
- * This is a utility class with static methods only
+ * This is a utility class with static methods only. It contains common helper
+ * methods that initalize or validate a counter's fields.
+ *
+ * Created by sharidanbarboza on 2017-09-26.
  */
 
 public final class CounterUtils {

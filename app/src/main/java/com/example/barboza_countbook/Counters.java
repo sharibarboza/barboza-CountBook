@@ -6,16 +6,29 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 /**
+ * Counters
+ *
+ * Model that holds an array of counters. The order is based on the date in
+ * which the counter was created, with the most recent counter at the end.
+ *
  * Created by sharidanbarboza on 2017-09-25.
  */
 
 public class Counters {;
     private ArrayList<Counter> counterList;
 
+    /**
+     * Constructs Counters object
+     * @param counterList the counter array (loaded or empty)
+     */
     Counters(ArrayList<Counter> counterList) {
         this.counterList = counterList;
     }
 
+    /**
+     * Get the counter array
+     * @return the counnter array
+     */
     public ArrayList<Counter> getList() {
         return counterList;
     }
