@@ -8,6 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * AddCounterActivity
+ *
+ * The activity for adding a new counter.
+ *
+ * Created by sharidanbarboza on 2017-09-24.
+ */
 public class AddCounterActivity extends AppCompatActivity {
 
     private Counter newCounter;
@@ -19,21 +26,31 @@ public class AddCounterActivity extends AppCompatActivity {
 
     private CounterController cc;
 
+    /**
+     * Called when the add activity is first created.
+     * @param savedInstanceState for passing data between activities
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_counter);
-        context = getApplicationContext();
 
+        // Get the activity context to access add activity resources
+        context = AddCounterActivity.this;
+
+        // Get the input field views
         inputName = (EditText) findViewById(R.id.inputName);
         inputValue = (EditText) findViewById(R.id.inputValue);
         inputComment = (EditText) findViewById(R.id.inputComment);
 
+        // Set up buttons
         addBtn = (Button) findViewById(R.id.addBtn);
         cancelBtn = (Button) findViewById(R.id.cancelBtn);
 
-        cc = CounterApplication.getCounterController(context);
+        // Get the counter controller
+        cc = CounterApplication.getCounterController(getApplicationContext());
 
+        // Add counter when the add button is clicked
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +58,7 @@ public class AddCounterActivity extends AppCompatActivity {
             }
         });
 
+        // Go back to the main activity
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,8 +67,11 @@ public class AddCounterActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Add a new counter after validating all input fields.
+     */
     public void addCounter() {
-        if (CounterUtils.validate(this, inputName, inputValue, null)) {
+        if (CounterUtils.validate(context, inputName, inputValue, null)) {
             initalize();
             cc.addCounter(newCounter);
             Toast.makeText(context, context.getString(R.string.add_toast),
@@ -59,12 +80,20 @@ public class AddCounterActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Get the user's input for the counter fields and create a new
+     * instance of a counter object. Then set the counter's values.
+     */
     private void initalize() {
+        // Get the input values
         name = inputName.getText().toString().trim();
         value = Integer.parseInt(inputValue.getText().toString().trim());
         comment = inputComment.getText().toString().trim();
 
+        // Create new counter object
         newCounter = new Counter(name, value);
+
+        // Set counter values
         newCounter.setName(name);
         newCounter.setInitVal(value);
         newCounter.setDate(CounterUtils.initalizeDate(this));

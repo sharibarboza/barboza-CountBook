@@ -10,6 +10,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * EditCounterActivity
+ *
+ * The activity for editing an existing counter.
+ *
+ * Created by sharidanbarboza on 2017-09-25.
+ */
 public class EditCounterActivity extends AppCompatActivity {
 
     private CounterController cc;
@@ -22,14 +29,21 @@ public class EditCounterActivity extends AppCompatActivity {
     private Button editBtn, cancelBtn;
     private Context context;
 
+    /**
+     * Called when the edit activity is first created.
+     * @param savedInstanceState for passing data between activities
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_counter);
-        context = getApplicationContext();
 
-        // Get the controller
-        cc = CounterApplication.getCounterController(context);
+        // Get the activity context to access edit activity resources
+        context = EditCounterActivity.this;
+
+        // Get the counter controller
+        cc = CounterApplication.getCounterController(getApplicationContext());
+
         // Get the counter to edit
         intent = getIntent();
         int position = intent.getExtras().getInt("position");
@@ -60,7 +74,7 @@ public class EditCounterActivity extends AppCompatActivity {
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateCounter();
+                editCounter();
             }
         });
 
@@ -73,9 +87,12 @@ public class EditCounterActivity extends AppCompatActivity {
         });
     }
 
-    public void updateCounter() {
-        if (CounterUtils.validate(this, editName, editValue, editCurrent)) {
-            initialize();
+    /**
+     * Edit the counter that was edited after validating all input fields.
+     */
+    public void editCounter() {
+        if (CounterUtils.validate(context, editName, editValue, editCurrent)) {
+            update();
             cc.updateCounters();
             Toast.makeText(context, context.getString(R.string.edit_toast),
                     Toast.LENGTH_SHORT).show();
@@ -83,12 +100,18 @@ public class EditCounterActivity extends AppCompatActivity {
         }
     }
 
-    private void initialize() {
+    /**
+     * Update previous counter values with user's new input fields only if they
+     * have been changed.
+     */
+    private void update() {
+        // Get the input values
         name = editName.getText().toString().trim();
         current = Integer.parseInt(editCurrent.getText().toString().trim());
         value = Integer.parseInt(editValue.getText().toString().trim());
         comment = editComment.getText().toString().trim();
 
+        // Set new values only
         if (!name.equals(counter.getName())) {
             counter.setName(name);
         }
@@ -105,6 +128,7 @@ public class EditCounterActivity extends AppCompatActivity {
             counter.setComment(comment);
         }
 
+        // Change the date of when the counter was last edited
         counter.setDate(CounterUtils.initalizeDate(context));
     }
 }

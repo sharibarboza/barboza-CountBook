@@ -1,16 +1,12 @@
 package com.example.barboza_countbook;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
@@ -27,6 +23,16 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * MainActivity
+ *
+ * The main activity for the application, mainly responsible for displaying
+ * the opening screen and showing the list view of counters. Also, handles
+ * incrementing, decrementing, and resetting actions for any counter.
+ *
+ * Created by sharidanbarboza on 2017-09-24.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String FILENAME = "file.sav";
@@ -37,14 +43,21 @@ public class MainActivity extends AppCompatActivity {
     private CustomAdapter adapter;
     private Context context;
 
+    /**
+     * Called when the main activity is first created.
+     * @param savedInstanceState for passing data between activities
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Set the activity context
         context = MainActivity.this;
 
+        // Clicking the FAB will take user to the add counter activity
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,13 +69,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cc = CounterApplication.getCounterController(this);
+        // Get the counter controller
+        cc = CounterApplication.getCounterController(getApplicationContext());
+
+        // Load and initialize the counter array data
         cc.configCounters();
         counters = cc.getCounters();
         counterList = counters.getList();
-        counterListView = (ListView) findViewById(R.id.listView);
 
-        // Register context for list view
+        // Register context menu for list view
+        counterListView = (ListView) findViewById(R.id.listView);
         registerForContextMenu(counterListView);
 
         // Handle list view click events
@@ -151,6 +167,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Called after onCreate or when returning to the main activity.
+     * Mainly creates and updates the adapter for displaying the list view.
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -160,13 +180,13 @@ public class MainActivity extends AppCompatActivity {
         updateTotal();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
+    /**
+     * Creates the context menu for displaying counter options, such as editing or
+     * deleting a counter. Opens after user long clicks on a list view item.
+     * @param menu the context menu being built
+     * @param v the view for which the menu is being built
+     * @param menuInfo extra information about the menu item
+     */
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
         // Taken from http://wptrafficanalyzer.in/blog/creating-a-floating-contextual-menu-in-android/
@@ -175,6 +195,13 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.actions , menu);
     }
 
+    /**
+     * Called whenever a context menu item is selected and deals with calling
+     * the appropriate activity/action for each option.
+     * @param item the context menu item that was selected
+     * @return false to allow normal context processing to proceed or true when an
+     * option in the menu has been selected
+     */
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         // Taken from https://developer.android.com/guide/topics/ui/menus.html#PopupMenu
@@ -183,9 +210,11 @@ public class MainActivity extends AppCompatActivity {
         int position = info.position;
 
         switch (item.getItemId()) {
+            // Delete a counter
             case R.id.menu_delete:
                 deleteCounter(position);
                 return true;
+            // Edit a counter
             case R.id.menu_edit:
                 editCounter(position);
                 return true;
@@ -205,13 +234,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Delete a counter
+     * Deletes a counter
      * @param position the position of the counter in the counter array
      */
     public void deleteCounter(int position) {
         cc.deleteCounter(position);
         adapter.notifyDataSetChanged();
-        Toast.makeText(this, this.getString(R.string.delete_toast), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, this.getString(R.string.delete_toast), Toast.LENGTH_SHORT).show();
         updateTotal();
     }
 

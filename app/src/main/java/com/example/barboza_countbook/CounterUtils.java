@@ -26,7 +26,7 @@ public final class CounterUtils {
 
     /**
      * Create a new date by taking the current date and converting it to a formatted string
-     * @param context application context to get the date format
+     * @param context activity context to get the date format
      * @return a formatted date string
      */
     public static String initalizeDate(Context context) {
@@ -36,7 +36,7 @@ public final class CounterUtils {
 
     /**
      * Main validation method for validating a counter's input fields
-     * @param context application context to get field strings
+     * @param context activity context to get field strings
      * @param inputName EditText view of name input field
      * @param inputValue EditText view of initial value input field
      * @param inputCurrent EditText view of current value field (set to null for add activities)
@@ -69,7 +69,7 @@ public final class CounterUtils {
     /**
      * Helper validation method for validating an integer
      * Ensures that an input integer is non-empty, a valid number, and non-negative
-     * @param context application context for getting toast strings
+     * @param context activity context for getting toast strings
      * @param value the string input to validate
      * @param countType The type of value (inital or current) for displaying in toast messages
      * @return true if the string is a valid integer
