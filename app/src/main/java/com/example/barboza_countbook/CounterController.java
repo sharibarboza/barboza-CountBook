@@ -48,6 +48,10 @@ public class CounterController {
         return counters;
     }
 
+    public void updateCounters() {
+        saveInFile();
+    }
+
     /**
      * Adds a new counter
      * @param counter Counter object
@@ -123,7 +127,7 @@ public class CounterController {
         return counterList;
     }
 
-    private void saveInFile() {
+    public void saveInFile() {
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME,
                     Context.MODE_PRIVATE);
