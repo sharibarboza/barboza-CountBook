@@ -71,7 +71,7 @@ public class AddCounterActivity extends AppCompatActivity {
      */
     public void addCounter() {
         if (CounterUtils.validate(context, inputName, inputValue, null)) {
-            initalize();
+            initialize();
             cc.addCounter(newCounter);
             Toast.makeText(context, context.getString(R.string.add_toast),
                     Toast.LENGTH_SHORT).show();
@@ -83,7 +83,7 @@ public class AddCounterActivity extends AppCompatActivity {
      * Get the user's input for the counter fields and create a new
      * instance of a counter object. Then set the counter's values.
      */
-    private void initalize() {
+    private void initialize() {
         // Get the input values
         String name = inputName.getText().toString().trim();
         int value = Integer.parseInt(inputValue.getText().toString().trim());
@@ -95,7 +95,7 @@ public class AddCounterActivity extends AppCompatActivity {
         // Set counter values
         newCounter.setName(name);
         newCounter.setInitVal(value);
-        newCounter.setDate(CounterUtils.initalizeDate(this));
+        cc.changeDate(newCounter);
         if (comment.length() > 0) {
             newCounter.setComment(comment);
         }

@@ -129,15 +129,15 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         try {
                             cc.decrementCounter(counter);
+                            adapter.notifyDataSetChanged();
+
+                            // Update value in dialog
+                            dialogValue.setText(String.valueOf(counter.getCurrentVal()));
                         } catch (NegativeValueException e) {
                             // Notify user that they cannot count below 0
                             Toast.makeText(context, context.getString(R.string.negative_value),
                                     Toast.LENGTH_SHORT).show();
                         }
-                        adapter.notifyDataSetChanged();
-
-                        // Update value in dialog
-                        dialogValue.setText(String.valueOf(counter.getCurrentVal()));
                     }
                 });
 

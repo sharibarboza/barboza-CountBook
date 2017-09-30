@@ -15,7 +15,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedHashMap;
 
 /**
@@ -44,7 +46,7 @@ public class CounterController {
     }
 
     /**
-     * Initalizes counter array either by loading from a file or creating an empty one
+     * Initializes counter array either by loading from a file or creating an empty one
      */
     public void configCounters() {
         ArrayList<Counter> counterList = loadFromFile();
@@ -59,6 +61,18 @@ public class CounterController {
         return counters;
     }
 
+    /**
+     * Gets a specific counter according to its position in the array
+     * @param position index of counter in counter array
+     * @return Counter object
+     */
+    public Counter getCounter(int position) {
+        return counters.get(position);
+    }
+
+    /**
+     * Saves the counters array in the file
+     */
     public void updateCounters() {
         saveInFile();
     }
@@ -87,6 +101,7 @@ public class CounterController {
      */
     public void resetCounter(Counter counter) {
         counter.setCurrentVal(counter.getInitVal());
+        changeDate(counter);
         saveInFile();
     }
 
@@ -97,6 +112,7 @@ public class CounterController {
     public void incrementCounter(Counter counter) {
         int oldValue = counter.getCurrentVal();
         counter.setCurrentVal(oldValue + 1);
+        changeDate(counter);
         saveInFile();
     }
 
@@ -111,16 +127,20 @@ public class CounterController {
             throw new NegativeValueException();
         } else {
             counter.setCurrentVal(oldValue - 1);
+            changeDate(counter);
+            saveInFile();
         }
     }
 
     /**
-     * Gets a specific counter according to its position in the array
-     * @param position index of counter in counter array
-     * @return Counter object
+     * Initializes or changes the date of a counter to the current date
+     * @param counter the counter that was created or edited
      */
-    public Counter getCounter(int position) {
-        return counters.get(position);
+    public void changeDate(Counter counter) {
+        String format = "yyyy-MM-dd";
+        Date currentDate = new Date();
+        String newDate = new SimpleDateFormat(format).format(currentDate);
+        counter.setDate(newDate);
     }
 
     /**
@@ -154,7 +174,7 @@ public class CounterController {
     /**
      * Save the counter array into the file.
      */
-    public void saveInFile() {
+    private void saveInFile() {
         // Taken from https://github.com/ta301fall2017/lonelyTwitter
         // 2017-9-24
         try {

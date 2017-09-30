@@ -11,7 +11,7 @@ import java.util.Date;
  * CounterUtils
  *
  * This is a utility class with static methods only. It contains common helper
- * methods that initalize or validate a counter's fields.
+ * methods that validate a counter's fields.
  *
  * Created by sharidanbarboza on 2017-09-26.
  */
@@ -23,16 +23,6 @@ public final class CounterUtils {
      * Prevents the class from being constructed
      */
     private CounterUtils() {}
-
-    /**
-     * Create a new date by taking the current date and converting it to a formatted string
-     * @param context activity context to get the date format
-     * @return a formatted date string
-     */
-    public static String initalizeDate(Context context) {
-        Date currentDate = new Date();
-        return new SimpleDateFormat(context.getString(R.string.date_format)).format(currentDate);
-    }
 
     /**
      * Main validation method for validating a counter's input fields

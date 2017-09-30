@@ -130,6 +130,6 @@ public class EditCounterActivity extends AppCompatActivity {
         }
 
         // Change the date of when the counter was last edited
-        counter.setDate(CounterUtils.initalizeDate(context));
+        cc.changeDate(counter);
     }
 }
