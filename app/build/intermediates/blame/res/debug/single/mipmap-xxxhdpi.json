@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
+        "source": "/Users/sharidanbarboza/barboza-CountBook/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/Users/sharidanbarboza/barboza-CountBook/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    }
+]

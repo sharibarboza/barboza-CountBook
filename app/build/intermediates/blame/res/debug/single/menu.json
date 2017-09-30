@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/menu/actions.xml",
+        "source": "/Users/sharidanbarboza/barboza-CountBook/app/src/main/res/menu/actions.xml"
+    },
+    {
+        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/sharidanbarboza/barboza-CountBook/app/src/main/res/menu/menu_main.xml"
+    }
+]
