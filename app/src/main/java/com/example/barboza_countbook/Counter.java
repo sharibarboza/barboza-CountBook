@@ -1,5 +1,8 @@
 package com.example.barboza_countbook;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by sharidanbarboza on 2017-09-24.
  *
@@ -24,6 +27,19 @@ public class Counter {
         this.initVal = initVal;
         this.currentVal = initVal;
         this.comment = "";
+    }
+
+    /**
+     * Instantiates a new Counter.
+     * @param name name of the counter
+     * @param initVal the value the counter will be reset to
+     * @param comment the counter's comment message
+     */
+    Counter(String name, int initVal, String comment) {
+        this.name = name;
+        this.initVal = initVal;
+        this.currentVal = initVal;
+        this.comment = comment;
     }
 
     /**
@@ -52,12 +68,19 @@ public class Counter {
 
     /**
      * Sets the counter date.
-     * When the counter is first instantiated, the date will be when the counter was created.
-     * Later on, the date will represent each time the current value changes.
      * @param date the counter date
      */
     public void setDate(String date) {
         this.date = date;
+    }
+
+    /**
+     * Sets the counter's date to the current date.
+     */
+    public void setCurrentDate() {
+        String format = "yyyy-MM-dd";
+        Date currentDate = new Date();
+        this.date = new SimpleDateFormat(format).format(currentDate);
     }
 
     /**
@@ -115,6 +138,25 @@ public class Counter {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    /**
+     * Increases the current value by one.
+     */
+    public void increment() {
+        currentVal += 1;
+    }
+
+    /**
+     * Decreases the current value b one.
+     * @throws NegativeValueException
+     */
+    public void decrement() throws NegativeValueException {
+        if (currentVal < 1) {
+            throw new NegativeValueException();
+        } else {
+            currentVal -= 1;
+        }
     }
 
 }

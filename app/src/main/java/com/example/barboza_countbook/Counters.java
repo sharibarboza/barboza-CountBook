@@ -1,9 +1,6 @@
 package com.example.barboza_countbook;
 
-import android.util.Log;
-
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 
 /**
  * Counters
@@ -27,36 +24,26 @@ public class Counters {;
 
     /**
      * Get the counter array
-     * @return the counnter array
+     * @return the counter array
      */
     public ArrayList<Counter> getList() {
         return counterList;
     }
 
     /**
-     * Adds a counter to the array list and linked hash map
-     * @param counter a Counter object
+     * Creates and adds a new counter to the counter array
+     * @param name name of the counter
+     * @param value initial value of the counter
+     * @param comment comment message of the counter (can be empty)
      */
-    public void add(Counter counter) {
-        counterList.add(counter);
+    public void add(String name, int value, String comment) {
+        Counter newCounter;
+        if (comment.length() > 0) {
+            newCounter = new Counter(name, value, comment);
+        } else {
+            newCounter = new Counter(name, value);
+        }
+        newCounter.setCurrentDate();
+        counterList.add(newCounter);
     }
-
-    /**
-     * Deletes a counter from array list and linked hash map
-     * @param position the index of the counter in the array
-     */
-    public void delete(int position) {
-        counterList.remove(position);
-    }
-
-    /**
-     * Gets a counter at the specific position
-     * @param position the index of the counter in the array
-     * @return a Counter object
-     */
-    public Counter get(int position) {
-        return counterList.get(position);
-    }
-
-
 }

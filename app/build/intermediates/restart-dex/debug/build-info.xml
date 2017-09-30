@@ -2,43 +2,37 @@
 <instant-run
     abi="x86"
     api-level="21"
-    build-mode="COLD"
+    build-mode="HOT_WARM"
     density="xhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1506756434263"
+    timestamp="1506797530911"
     token="4460592076787958934"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="6856" />
+        duration="12314" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="152" />
     <task
         name="instant-run-transform"
-        duration="486" />
+        duration="747" />
     <task
         name="verifier"
-        duration="93" />
+        duration="61" />
 
     <artifact
-        location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/sharidanbarboza/barboza-CountBook/app/build/outputs/apk/app-debug.apk"
-        type="SPLIT_MAIN" />
+        location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1506755032930"
+        timestamp="1506797356981"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/Users/sharidanbarboza/barboza-CountBook/app/build/outputs/apk/app-debug.apk"
@@ -65,6 +59,9 @@
             location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
+            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
             location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
@@ -72,23 +69,12 @@
             type="SPLIT" />
     </build>
     <build
-        build-mode="COLD"
-        timestamp="1506755517533"
-        verifier="COLD_SWAP_REQUESTED" >
+        build-mode="HOT_WARM"
+        timestamp="1506797530911"
+        verifier="COMPATIBLE" >
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/outputs/apk/app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1506756434263"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/outputs/apk/app-debug.apk"
-            type="SPLIT_MAIN" />
+            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

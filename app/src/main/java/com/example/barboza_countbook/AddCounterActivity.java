@@ -17,7 +17,6 @@ import android.widget.Toast;
  */
 public class AddCounterActivity extends AppCompatActivity {
 
-    private Counter newCounter;
     private EditText inputName;
     private EditText inputValue;
     private EditText inputComment;
@@ -70,34 +69,15 @@ public class AddCounterActivity extends AppCompatActivity {
      * Add a new counter after validating all input fields.
      */
     public void addCounter() {
-        if (CounterUtils.validate(context, inputName, inputValue, null)) {
-            initialize();
-            cc.addCounter(newCounter);
+        if (CounterValidator.validate(context, inputName, inputValue, null)) {
+            String name = inputName.getText().toString().trim();
+            int value = Integer.parseInt(inputValue.getText().toString().trim());
+            String comment = inputComment.getText().toString().trim();
+
+            cc.addCounter(name, value, comment);
             String add_str = context.getString(R.string.add_toast);
             Toast.makeText(context, add_str, Toast.LENGTH_SHORT).show();
             finish();
-        }
-    }
-
-    /**
-     * Get the user's input for the counter fields and create a new
-     * instance of a counter object. Then set the counter's values.
-     */
-    private void initialize() {
-        // Get and convert the input values
-        String name = inputName.getText().toString().trim();
-        int value = Integer.parseInt(inputValue.getText().toString().trim());
-        String comment = inputComment.getText().toString().trim();
-
-        // Create new counter object
-        newCounter = new Counter(name, value);
-
-        // Set counter values
-        newCounter.setName(name);
-        newCounter.setInitVal(value);
-        cc.changeDate(newCounter);
-        if (comment.length() > 0) {
-            newCounter.setComment(comment);
         }
     }
 

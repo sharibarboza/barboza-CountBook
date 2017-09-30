@@ -67,22 +67,42 @@ public class CounterController {
      * @return Counter object
      */
     public Counter getCounter(int position) {
-        return counters.get(position);
+        return counters.getList().get(position);
     }
 
     /**
-     * Saves the counters array in the file
+     * Call the Counters model to add a new counter
+     * @param name the counter name
+     * @param value the counter's initial value
+     * @param comment the counter's comment
      */
-    public void updateCounters() {
+    public void addCounter(String name, int value, String comment) {
+        counters.add(name, value, comment);
         saveInFile();
     }
 
     /**
-     * Adds a new counter
-     * @param counter Counter object
+     * Set the counter's new values
+     * @param counter the Counter to be edited
+     * @param name the counter's name
+     * @param current the counter's current value
+     * @param value the counter's initial value
+     * @param comment the counter's message
      */
-    public void addCounter(Counter counter) {
-        counters.add(counter);
+    public void editCounter(Counter counter, String name, int current, int value, String comment) {
+        if (!name.equals(counter.getName())) {
+            counter.setName(name);
+        }
+        if (current != counter.getCurrentVal()) {
+            counter.setCurrentVal(current);
+        }
+        if (value != counter.getInitVal()) {
+            counter.setInitVal(value);
+        }
+        if (!comment.equals(counter.getComment())) {
+            counter.setComment(comment);
+        }
+        counter.setCurrentDate();
         saveInFile();
     }
 
@@ -91,7 +111,7 @@ public class CounterController {
      * @param position index of counter in counter array
      */
     public void deleteCounter(int position) {
-        counters.delete(position);
+        counters.getList().remove(position);
         saveInFile();
     }
 
@@ -101,7 +121,7 @@ public class CounterController {
      */
     public void resetCounter(Counter counter) {
         counter.setCurrentVal(counter.getInitVal());
-        changeDate(counter);
+        counter.setCurrentDate();
         saveInFile();
     }
 
@@ -110,37 +130,25 @@ public class CounterController {
      * @param counter Counter object
      */
     public void incrementCounter(Counter counter) {
-        int oldValue = counter.getCurrentVal();
-        counter.setCurrentVal(oldValue + 1);
-        changeDate(counter);
+        counter.increment();
+        counter.setCurrentDate();
         saveInFile();
     }
 
     /**
      * Decrements a counter's current value.
-     * Throws an exception when attempting to decrement to negative values.
      * @param counter Counter object
      */
-    public void decrementCounter(Counter counter) throws NegativeValueException {
-        int oldValue = counter.getCurrentVal();
-        if (oldValue < 1) {
-            throw new NegativeValueException();
-        } else {
-            counter.setCurrentVal(oldValue - 1);
-            changeDate(counter);
+    public boolean decrementCounter(Counter counter) {
+        boolean canDecrement;
+        try {
+            counter.decrement();
             saveInFile();
+            canDecrement = true;
+        } catch (NegativeValueException e) {
+            canDecrement = false;
         }
-    }
-
-    /**
-     * Initializes or changes the date of a counter to the current date
-     * @param counter the counter that was created or edited
-     */
-    public void changeDate(Counter counter) {
-        String format = "yyyy-MM-dd";
-        Date currentDate = new Date();
-        String newDate = new SimpleDateFormat(format).format(currentDate);
-        counter.setDate(newDate);
+        return canDecrement;
     }
 
     /**
@@ -165,8 +173,6 @@ public class CounterController {
             counterList = gson.fromJson(in, listType);
         } catch (FileNotFoundException e) {
             counterList = new ArrayList<Counter>();
-        } catch (IOException e) {
-            throw new RuntimeException();
         }
         return counterList;
     }

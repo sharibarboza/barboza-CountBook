@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * CounterUtils
+ * CounterValidator
  *
  * This is a utility class with static methods only. It contains common helper
  * methods that validate a counter's fields.
@@ -16,13 +16,13 @@ import java.util.Date;
  * Created by sharidanbarboza on 2017-09-26.
  */
 
-public final class CounterUtils {
+public final class CounterValidator {
 
     /**
      * Private constructor
      * Prevents the class from being constructed
      */
-    private CounterUtils() {}
+    private CounterValidator() {}
 
     /**
      * Main validation method for validating a counter's input fields
@@ -93,9 +93,10 @@ public final class CounterUtils {
      * @return true if string input can be converted to an integer
      */
     public static boolean isInteger(String input) {
-        boolean isInteger = true;
+        boolean isInteger;
         try {
             Integer.parseInt(input);
+            isInteger = true;
         } catch (NumberFormatException e) {
             isInteger = false;
         }

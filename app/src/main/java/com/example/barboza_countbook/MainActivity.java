@@ -125,11 +125,10 @@ public class MainActivity extends AppCompatActivity {
                 downBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        try {
-                            cc.decrementCounter(counter);
+                        if (cc.decrementCounter(counter)) {
                             adapter.notifyDataSetChanged();
                             dialogValue.setText(String.valueOf(counter.getCurrentVal()));
-                        } catch (NegativeValueException e) {
+                        } else {
                             // Notify user that they cannot count below 0
                             String neg_str = context.getString(R.string.negative_value);
                             Toast.makeText(context, neg_str, Toast.LENGTH_SHORT).show();

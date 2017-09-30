@@ -92,44 +92,16 @@ public class EditCounterActivity extends AppCompatActivity {
      * Edit the counter that was edited after validating all input fields.
      */
     public void editCounter() {
-        if (CounterUtils.validate(context, editName, editValue, editCurrent)) {
-            update();
-            cc.updateCounters();
+        if (CounterValidator.validate(context, editName, editValue, editCurrent)) {
+            String name = editName.getText().toString().trim();
+            int current = Integer.parseInt(editCurrent.getText().toString().trim());
+            int value = Integer.parseInt(editValue.getText().toString().trim());
+            String comment = editComment.getText().toString().trim();
+
+            cc.editCounter(counter, name, current, value, comment);
             String update_str = context.getString(R.string.edit_toast);
             Toast.makeText(context, update_str, Toast.LENGTH_SHORT).show();
             finish();
         }
-    }
-
-    /**
-     * Update previous counter values with user's new input fields only if they
-     * have been changed.
-     */
-    private void update() {
-        // Get and convert the input values
-        String name = editName.getText().toString().trim();
-        int current = Integer.parseInt(editCurrent.getText().toString().trim());
-        int value = Integer.parseInt(editValue.getText().toString().trim());
-        String comment = editComment.getText().toString().trim();
-
-        // Set new values only
-        if (!name.equals(counter.getName())) {
-            counter.setName(name);
-        }
-
-        if (current != counter.getCurrentVal()) {
-            counter.setCurrentVal(current);
-        }
-
-        if (value != counter.getInitVal()) {
-            counter.setInitVal(value);
-        }
-
-        if (!comment.equals(counter.getComment())) {
-            counter.setComment(comment);
-        }
-
-        // Change the date of when the counter was last edited
-        cc.changeDate(counter);
     }
 }
