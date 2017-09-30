@@ -46,4 +46,12 @@ public class Counters {;
         newCounter.setCurrentDate();
         counterList.add(newCounter);
     }
+
+    /**
+     * Deletes a counter from the counter array
+     * @param position the index of the counter in the array
+     */
+    public void delete(int position) {
+        counterList.remove(position);
+    }
 }

@@ -111,7 +111,7 @@ public class CounterController {
      * @param position index of counter in counter array
      */
     public void deleteCounter(int position) {
-        counters.getList().remove(position);
+        counters.delete(position);
         saveInFile();
     }
 
