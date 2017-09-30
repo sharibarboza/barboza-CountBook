@@ -95,8 +95,8 @@ public class EditCounterActivity extends AppCompatActivity {
         if (CounterUtils.validate(context, editName, editValue, editCurrent)) {
             update();
             cc.updateCounters();
-            Toast.makeText(context, context.getString(R.string.edit_toast),
-                    Toast.LENGTH_SHORT).show();
+            String update_str = context.getString(R.string.edit_toast);
+            Toast.makeText(context, update_str, Toast.LENGTH_SHORT).show();
             finish();
         }
     }

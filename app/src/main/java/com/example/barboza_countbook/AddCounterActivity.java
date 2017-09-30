@@ -73,8 +73,8 @@ public class AddCounterActivity extends AppCompatActivity {
         if (CounterUtils.validate(context, inputName, inputValue, null)) {
             initialize();
             cc.addCounter(newCounter);
-            Toast.makeText(context, context.getString(R.string.add_toast),
-                    Toast.LENGTH_SHORT).show();
+            String add_str = context.getString(R.string.add_toast);
+            Toast.makeText(context, add_str, Toast.LENGTH_SHORT).show();
             finish();
         }
     }

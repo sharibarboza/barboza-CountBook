@@ -117,8 +117,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         cc.incrementCounter(counter);
                         adapter.notifyDataSetChanged();
-
-                        // Update value in dialog
                         dialogValue.setText(String.valueOf(counter.getCurrentVal()));
                     }
                 });
@@ -130,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             cc.decrementCounter(counter);
                             adapter.notifyDataSetChanged();
-
-                            // Update value in dialog
                             dialogValue.setText(String.valueOf(counter.getCurrentVal()));
                         } catch (NegativeValueException e) {
                             // Notify user that they cannot count below 0
@@ -149,8 +145,6 @@ public class MainActivity extends AppCompatActivity {
                         String reset_str = context.getString(R.string.reset_toast);
                         Toast.makeText(context, reset_str, Toast.LENGTH_SHORT).show();
                         adapter.notifyDataSetChanged();
-
-                        // Update value in dialog
                         dialogValue.setText(String.valueOf(counter.getCurrentVal()));
                     }
                 });
@@ -223,10 +217,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             // Edit a counter
             case R.id.menu_edit:
-                setResult(RESULT_OK);
-
                 // Taken from https://stackoverflow.com/questions/34120858/how-do-i-pass-listview-data-to-another-activity
                 // 2017-9-27
+                setResult(RESULT_OK);
                 Intent editCounterIntent = new Intent(context, EditCounterActivity.class);
                 editCounterIntent.putExtra("position", position);
                 startActivity(editCounterIntent);
@@ -246,6 +239,4 @@ public class MainActivity extends AppCompatActivity {
         String totalCountersText = "Total Counters: " + adapter.getCount();
         textView.setText(totalCountersText);
     }
-
-
 }
