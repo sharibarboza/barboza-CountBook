@@ -106,7 +106,7 @@ public class EditCounterActivity extends AppCompatActivity {
      * have been changed.
      */
     private void update() {
-        // Get the input values
+        // Get and convert the input values
         String name = editName.getText().toString().trim();
         int current = Integer.parseInt(editCurrent.getText().toString().trim());
         int value = Integer.parseInt(editValue.getText().toString().trim());

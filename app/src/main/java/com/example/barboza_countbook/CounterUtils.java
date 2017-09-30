@@ -32,7 +32,8 @@ public final class CounterUtils {
      * @param inputCurrent EditText view of current value field (set to null for add activities)
      * @return true if all fields are valid
      */
-    public static boolean validate(Context context, EditText inputName, EditText inputValue, EditText inputCurrent) {
+    public static boolean validate(Context context, EditText inputName, EditText inputValue,
+                                   EditText inputCurrent) {
         boolean valid;
         String tempName = inputName.getText().toString();
         String tempInit = inputValue.getText().toString().trim();

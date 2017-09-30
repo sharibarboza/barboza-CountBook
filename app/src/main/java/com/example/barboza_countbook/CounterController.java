@@ -159,7 +159,7 @@ public class CounterController {
 
             Gson gson = new Gson();
 
-            //Modified from https://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylist
+            // Modified from https://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylist
             // 2017-9-25
             Type listType = new TypeToken<ArrayList<Counter>>(){}.getType();
             counterList = gson.fromJson(in, listType);

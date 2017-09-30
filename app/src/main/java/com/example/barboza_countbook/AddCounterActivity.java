@@ -84,7 +84,7 @@ public class AddCounterActivity extends AppCompatActivity {
      * instance of a counter object. Then set the counter's values.
      */
     private void initialize() {
-        // Get the input values
+        // Get and convert the input values
         String name = inputName.getText().toString().trim();
         int value = Integer.parseInt(inputValue.getText().toString().trim());
         String comment = inputComment.getText().toString().trim();

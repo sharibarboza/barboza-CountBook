@@ -207,16 +207,16 @@ public class MainActivity extends AppCompatActivity {
         int position = info.position;
 
         switch (item.getItemId()) {
-            // Delete a counter
             case R.id.menu_delete:
+                // Delete the counter selected
                 cc.deleteCounter(position);
                 adapter.notifyDataSetChanged();
                 String delete_str = context.getString(R.string.delete_toast);
                 Toast.makeText(context, delete_str, Toast.LENGTH_SHORT).show();
                 updateTotal();
                 return true;
-            // Edit a counter
             case R.id.menu_edit:
+                // Edit the counter selected
                 // Taken from https://stackoverflow.com/questions/34120858/how-do-i-pass-listview-data-to-another-activity
                 // 2017-9-27
                 setResult(RESULT_OK);
