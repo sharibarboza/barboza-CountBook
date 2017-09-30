@@ -1,7 +1,6 @@
 package com.example.barboza_countbook;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -15,10 +14,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedHashMap;
 
 /**
  * CounterController
@@ -143,6 +139,7 @@ public class CounterController {
         boolean canDecrement;
         try {
             counter.decrement();
+            counter.setCurrentDate();
             saveInFile();
             canDecrement = true;
         } catch (NegativeValueException e) {
