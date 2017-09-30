@@ -54,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
         // Set the activity context
         context = MainActivity.this;
 
+        // Get the counter controller
+        cc = CounterApplication.getCounterController(getApplicationContext());
+
+        // Load and initialize the counter array data
+        cc.configCounters();
+        counterList = cc.getCounters().getList();
+
+        // Register context menu for list view
+        counterListView = (ListView) findViewById(R.id.listView);
+        registerForContextMenu(counterListView);
+
         // Clicking the FAB will take user to the add counter activity
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -66,100 +77,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Get the counter controller
-        cc = CounterApplication.getCounterController(getApplicationContext());
-
-        // Load and initialize the counter array data
-        cc.configCounters();
-        counterList = cc.getCounters().getList();
-
-        // Register context menu for list view
-        counterListView = (ListView) findViewById(R.id.listView);
-        registerForContextMenu(counterListView);
-
         // Handle list view click events
         // Taken from https://stackoverflow.com/questions/17851687/how-to-handle-the-click-event-in-listview-in-android
         // 2017-9-28
         counterListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Taken from https://www.youtube.com/watch?v=plnLs6aST1M&t=758s
-                // 2017-9-27
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-
-                // Set the view
-                LayoutInflater inflater = LayoutInflater.from(context);
-                View v = inflater.inflate(R.layout.counter_dialog, null);
-                builder.setView(v);
-
-                // Get counter
-                final Counter counter = cc.getCounter(position);
-
-                // Set the counter name and comment
-                TextView dialogName = (TextView) v.findViewById(R.id.dialogName);
-                TextView dialogComment = (TextView) v.findViewById(R.id.dialogComment);
-                dialogName.setText(counter.getName());
-                dialogComment.setText(counter.getComment());
-
-                // Set the current value
-                final TextView dialogValue = (TextView) v.findViewById(R.id.dialogValue);
-                dialogValue.setText(String.valueOf(counter.getCurrentVal()));
-
-                // Set up the dialog buttons
-                Button upBtn = (Button) v.findViewById(R.id.increment);
-                Button downBtn = (Button) v.findViewById(R.id.decrement);
-                Button resetBtn = (Button) v.findViewById(R.id.reset);
-                Button doneBtn = (Button) v.findViewById(R.id.done);
-
-                // Increment counter value when up button is clicked
-                upBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        cc.incrementCounter(counter);
-                        adapter.notifyDataSetChanged();
-                        dialogValue.setText(String.valueOf(counter.getCurrentVal()));
-                    }
-                });
-
-                // Decrement counter value when down button is clicked.
-                downBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (cc.decrementCounter(counter)) {
-                            adapter.notifyDataSetChanged();
-                            dialogValue.setText(String.valueOf(counter.getCurrentVal()));
-                        } else {
-                            // Notify user that they cannot count below 0
-                            String neg_str = context.getString(R.string.negative_value);
-                            Toast.makeText(context, neg_str, Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-                // Reset counter value when reset button is clicked
-                resetBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        cc.resetCounter(counter);
-                        String reset_str = context.getString(R.string.reset_toast);
-                        Toast.makeText(context, reset_str, Toast.LENGTH_SHORT).show();
-                        adapter.notifyDataSetChanged();
-                        dialogValue.setText(String.valueOf(counter.getCurrentVal()));
-                    }
-                });
-
-                // Build and display the dialog
-                final AlertDialog dialog = builder.create();
-                dialog.show();
-
-                // Exit alert dialog
-                doneBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
-
+                setDialogListener(position);
             }
         });
     }
@@ -237,5 +161,89 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.totalCount);
         String totalCountersText = "Total Counters: " + adapter.getCount();
         textView.setText(totalCountersText);
+    }
+
+    /**
+     * Will listen for dialog actions such as incrementing, decrementing,
+     * resetting, or exiting the dialog.
+     * @param position the index of the view that was selected in the list view
+     */
+    private void setDialogListener(int position) {
+        // Taken from https://www.youtube.com/watch?v=plnLs6aST1M&t=758s
+        // 2017-9-27
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+        // Set the view
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View v = inflater.inflate(R.layout.counter_dialog, null);
+        builder.setView(v);
+
+        // Get counter
+        final Counter counter = cc.getCounter(position);
+
+        // Set the counter name and comment
+        TextView dialogName = (TextView) v.findViewById(R.id.dialogName);
+        TextView dialogComment = (TextView) v.findViewById(R.id.dialogComment);
+        dialogName.setText(counter.getName());
+        dialogComment.setText(counter.getComment());
+
+        // Set the current value
+        final TextView dialogValue = (TextView) v.findViewById(R.id.dialogValue);
+        dialogValue.setText(String.valueOf(counter.getCurrentVal()));
+
+        // Set up the dialog buttons
+        Button upBtn = (Button) v.findViewById(R.id.increment);
+        Button downBtn = (Button) v.findViewById(R.id.decrement);
+        Button resetBtn = (Button) v.findViewById(R.id.reset);
+        Button doneBtn = (Button) v.findViewById(R.id.done);
+
+        // Build and display the dialog
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+
+        // Increment counter value when up button is clicked
+        upBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cc.incrementCounter(counter);
+                adapter.notifyDataSetChanged();
+                dialogValue.setText(String.valueOf(counter.getCurrentVal()));
+            }
+        });
+
+        // Decrement counter value when down button is clicked.
+        downBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cc.decrementCounter(counter)) {
+                    adapter.notifyDataSetChanged();
+                    dialogValue.setText(String.valueOf(counter.getCurrentVal()));
+                } else {
+                    // Notify user that they cannot count below 0
+                    String neg_str = context.getString(R.string.negative_value);
+                    Toast.makeText(context, neg_str, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        // Reset counter value when reset button is clicked
+        resetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cc.resetCounter(counter);
+                String reset_str = context.getString(R.string.reset_toast);
+                Toast.makeText(context, reset_str, Toast.LENGTH_SHORT).show();
+                adapter.notifyDataSetChanged();
+                dialogValue.setText(String.valueOf(counter.getCurrentVal()));
+            }
+        });
+
+        // Exit alert dialog
+        doneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
     }
 }

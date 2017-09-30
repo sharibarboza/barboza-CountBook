@@ -162,11 +162,8 @@ public class CounterController {
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-
             Gson gson = new Gson();
 
-            // Modified from https://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylist
-            // 2017-9-25
             Type listType = new TypeToken<ArrayList<Counter>>(){}.getType();
             counterList = gson.fromJson(in, listType);
         } catch (FileNotFoundException e) {
@@ -184,7 +181,6 @@ public class CounterController {
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME,
                     Context.MODE_PRIVATE);
-
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
 
             Gson gson = new Gson();
