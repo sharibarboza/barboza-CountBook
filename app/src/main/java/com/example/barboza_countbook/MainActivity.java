@@ -11,7 +11,6 @@ import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -35,9 +34,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String FILENAME = "file.sav";
     private ListView counterListView;
-    private Counters counters;
     private ArrayList<Counter> counterList;
     private CounterController cc;
     private CustomAdapter adapter;
@@ -74,8 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Load and initialize the counter array data
         cc.configCounters();
-        counters = cc.getCounters();
-        counterList = counters.getList();
+        counterList = cc.getCounters().getList();
 
         // Register context menu for list view
         counterListView = (ListView) findViewById(R.id.listView);
@@ -235,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
      * Changes the value of total counters text view usually called after adding
      * or deleting a counter.
      */
-    private void updateTotal() {
+    public void updateTotal() {
         TextView textView = (TextView) findViewById(R.id.totalCount);
         String totalCountersText = "Total Counters: " + adapter.getCount();
         textView.setText(totalCountersText);

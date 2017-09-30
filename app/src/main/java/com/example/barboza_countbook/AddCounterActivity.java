@@ -18,10 +18,9 @@ import android.widget.Toast;
 public class AddCounterActivity extends AppCompatActivity {
 
     private Counter newCounter;
-    private EditText inputName, inputValue, inputComment;
-    private String name, comment, date;
-    private int value;
-    private Button addBtn, cancelBtn;
+    private EditText inputName;
+    private EditText inputValue;
+    private EditText inputComment;
     private Context context;
 
     private CounterController cc;
@@ -44,8 +43,8 @@ public class AddCounterActivity extends AppCompatActivity {
         inputComment = (EditText) findViewById(R.id.inputComment);
 
         // Set up buttons
-        addBtn = (Button) findViewById(R.id.addBtn);
-        cancelBtn = (Button) findViewById(R.id.cancelBtn);
+        Button addBtn = (Button) findViewById(R.id.addBtn);
+        Button cancelBtn = (Button) findViewById(R.id.cancelBtn);
 
         // Get the counter controller
         cc = CounterApplication.getCounterController(getApplicationContext());
@@ -86,9 +85,9 @@ public class AddCounterActivity extends AppCompatActivity {
      */
     private void initalize() {
         // Get the input values
-        name = inputName.getText().toString().trim();
-        value = Integer.parseInt(inputValue.getText().toString().trim());
-        comment = inputComment.getText().toString().trim();
+        String name = inputName.getText().toString().trim();
+        int value = Integer.parseInt(inputValue.getText().toString().trim());
+        String comment = inputComment.getText().toString().trim();
 
         // Create new counter object
         newCounter = new Counter(name, value);

@@ -45,7 +45,7 @@ public class CustomAdapter extends ArrayAdapter<Counter> {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         // Taken from https://devtut.wordpress.com/2011/06/09/custom-arrayadapter-for-a-listview-android/
-        // 2017-09-25
+        // 2017-0925
         View v = view;
         if (v == null) {
             // Get view from the XML file

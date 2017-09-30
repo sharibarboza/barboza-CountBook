@@ -19,15 +19,14 @@ import android.widget.Toast;
  */
 public class EditCounterActivity extends AppCompatActivity {
 
-    private CounterController cc;
-    private EditText editName, editCurrent, editValue, editComment;
-    private TextView editDate;
-    private String name, comment;
-    private int current, value;
-    private Intent intent;
     private Counter counter;
-    private Button editBtn, cancelBtn;
+    private EditText editName;
+    private EditText editCurrent;
+    private EditText editValue;
+    private EditText editComment;
     private Context context;
+
+    private CounterController cc;
 
     /**
      * Called when the edit activity is first created.
@@ -47,7 +46,7 @@ public class EditCounterActivity extends AppCompatActivity {
         // Get the counter to edit
         // Taken from https://stackoverflow.com/questions/34120858/how-do-i-pass-listview-data-to-another-activity
         // 2017-9-27
-        intent = getIntent();
+        Intent intent = getIntent();
         int position = intent.getExtras().getInt("position");
         counter = cc.getCounter(position);
 
@@ -56,7 +55,7 @@ public class EditCounterActivity extends AppCompatActivity {
         editCurrent = (EditText) findViewById(R.id.editCurrent);
         editValue = (EditText) findViewById(R.id.editValue);
         editComment = (EditText) findViewById(R.id.editComment);
-        editDate = (TextView) findViewById(R.id.editDate);
+        TextView editDate = (TextView) findViewById(R.id.editDate);
 
         // Set text for counter's current fields
         editName.setText(counter.getName());
@@ -69,8 +68,8 @@ public class EditCounterActivity extends AppCompatActivity {
         editDate.setText(lastUpdate);
 
         // Set up buttons
-        editBtn = (Button) findViewById(R.id.editBtn);
-        cancelBtn = (Button) findViewById(R.id.cancelBtnEdit);
+        Button editBtn = (Button) findViewById(R.id.editBtn);
+        Button cancelBtn = (Button) findViewById(R.id.cancelBtnEdit);
 
         // Edit counter with the updated fields
         editBtn.setOnClickListener(new View.OnClickListener() {
@@ -108,10 +107,10 @@ public class EditCounterActivity extends AppCompatActivity {
      */
     private void update() {
         // Get the input values
-        name = editName.getText().toString().trim();
-        current = Integer.parseInt(editCurrent.getText().toString().trim());
-        value = Integer.parseInt(editValue.getText().toString().trim());
-        comment = editComment.getText().toString().trim();
+        String name = editName.getText().toString().trim();
+        int current = Integer.parseInt(editCurrent.getText().toString().trim());
+        int value = Integer.parseInt(editValue.getText().toString().trim());
+        String comment = editComment.getText().toString().trim();
 
         // Set new values only
         if (!name.equals(counter.getName())) {
