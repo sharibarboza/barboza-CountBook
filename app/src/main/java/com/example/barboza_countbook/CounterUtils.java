@@ -43,8 +43,8 @@ public final class CounterUtils {
         }
 
         if (tempName.isEmpty()) {
-            Toast.makeText(context, context.getString(R.string.name_required),
-                    Toast.LENGTH_SHORT).show();
+            String name_req_str = context.getString(R.string.name_required);
+            Toast.makeText(context, name_req_str, Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (!validateValue(context, tempInit, "Initial ")) {
             valid = false;
@@ -68,16 +68,16 @@ public final class CounterUtils {
         boolean valid;
 
         if (value.isEmpty()) {
-            Toast.makeText(context, countType + context.getString(R.string.value_required),
-                    Toast.LENGTH_SHORT).show();
+            String val_req_str = context.getString(R.string.value_required);
+            Toast.makeText(context, countType + val_req_str, Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (!isInteger(value)) {
-            Toast.makeText(context, countType + context.getString(R.string.is_num),
-                    Toast.LENGTH_SHORT).show();
+            String val_num_str = context.getString(R.string.is_num);
+            Toast.makeText(context, countType + val_num_str, Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (Integer.parseInt(value) < 0) {
-            Toast.makeText(context, countType + context.getString(R.string.is_positive),
-                    Toast.LENGTH_SHORT).show();
+            String val_pos_str = context.getString(R.string.is_positive);
+            Toast.makeText(context, countType + val_pos_str, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             valid = true;

@@ -135,8 +135,8 @@ public class MainActivity extends AppCompatActivity {
                             dialogValue.setText(String.valueOf(counter.getCurrentVal()));
                         } catch (NegativeValueException e) {
                             // Notify user that they cannot count below 0
-                            Toast.makeText(context, context.getString(R.string.negative_value),
-                                    Toast.LENGTH_SHORT).show();
+                            String neg_str = context.getString(R.string.negative_value);
+                            Toast.makeText(context, neg_str, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -146,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         cc.resetCounter(counter);
-                        Toast.makeText(context, context.getString(R.string.reset_toast),
-                                Toast.LENGTH_SHORT).show();
+                        String reset_str = context.getString(R.string.reset_toast);
+                        Toast.makeText(context, reset_str, Toast.LENGTH_SHORT).show();
                         adapter.notifyDataSetChanged();
 
                         // Update value in dialog
@@ -178,7 +178,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         adapter = new CustomAdapter(this, R.layout.list_item, counterList);
         counterListView.setAdapter(adapter);
         updateTotal();
@@ -216,11 +215,22 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // Delete a counter
             case R.id.menu_delete:
-                deleteCounter(position);
+                cc.deleteCounter(position);
+                adapter.notifyDataSetChanged();
+                String delete_str = context.getString(R.string.delete_toast);
+                Toast.makeText(context, delete_str, Toast.LENGTH_SHORT).show();
+                updateTotal();
                 return true;
             // Edit a counter
             case R.id.menu_edit:
-                editCounter(position);
+                setResult(RESULT_OK);
+
+                // Taken from https://stackoverflow.com/questions/34120858/how-do-i-pass-listview-data-to-another-activity
+                // 2017-9-27
+                Intent editCounterIntent = new Intent(context, EditCounterActivity.class);
+                editCounterIntent.putExtra("position", position);
+                startActivity(editCounterIntent);
+                adapter.notifyDataSetChanged();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -237,30 +247,5 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(totalCountersText);
     }
 
-    /**
-     * Deletes a counter
-     * @param position the position of the counter in the counter array
-     */
-    public void deleteCounter(int position) {
-        cc.deleteCounter(position);
-        adapter.notifyDataSetChanged();
-        Toast.makeText(context, this.getString(R.string.delete_toast), Toast.LENGTH_SHORT).show();
-        updateTotal();
-    }
-
-    /**
-     * Edits a counter
-     * @param position the position of the counter in the counter array
-     */
-    public void editCounter(int position) {
-        setResult(RESULT_OK);
-
-        // Taken from https://stackoverflow.com/questions/34120858/how-do-i-pass-listview-data-to-another-activity
-        // 2017-9-27
-        Intent editCounterIntent = new Intent(context, EditCounterActivity.class);
-        editCounterIntent.putExtra("position", position);
-        startActivity(editCounterIntent);
-        adapter.notifyDataSetChanged();
-    }
 
 }
