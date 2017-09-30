@@ -132,8 +132,9 @@ public class CounterController {
     }
 
     /**
-     * Decrements a counter's current value.
+     * Decrements a counter's current value (if it can)
      * @param counter Counter object
+     * @return true if the counter was decremented
      */
     public boolean decrementCounter(Counter counter) {
         boolean canDecrement;
