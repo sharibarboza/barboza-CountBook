@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
-        "source": "/Users/sharidanbarboza/barboza-CountBook/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
-        "source": "/Users/sharidanbarboza/barboza-CountBook/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     }
 ]

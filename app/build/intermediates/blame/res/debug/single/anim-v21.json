@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
     }
 ]

@@ -1,80 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="21"
-    build-mode="HOT_WARM"
+    api-level="25"
+    build-mode="COLD"
     density="xhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1506797530911"
-    token="4460592076787958934"
-    verifier="COMPATIBLE" >
+    timestamp="1506815950038"
+    token="8091954102744482140"
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="12314" />
+        duration="200" />
     <task
         name="instant-run-dex"
-        duration="152" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="747" />
+        duration="166" />
     <task
         name="verifier"
-        duration="61" />
+        duration="40" />
 
     <artifact
-        location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1506797356981"
+        timestamp="1506815745337"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/outputs/apk/app-debug.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/outputs/apk/app-debug.apk"
             type="SPLIT_MAIN" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
     </build>
     <build
-        build-mode="HOT_WARM"
-        timestamp="1506797530911"
-        verifier="COMPATIBLE" >
+        build-mode="COLD"
+        timestamp="1506815950038"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
+            location="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

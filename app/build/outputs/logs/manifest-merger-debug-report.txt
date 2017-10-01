@@ -1,107 +1,107 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:2:1-26:12
 	package
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:3:5-44
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:3:5-44
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
 application
-ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:5:5-24:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/sharidanbarboza/.android/build-cache/098df4e429589553fe6d90fa6888a7ea6e8ef354/output/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/568f9506de4db5c95def3ddd102859e0434114cf/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/cb6c5c01bc40d5a298ec95f88429ce3841043066/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/fbea730bcb691f756aed0370061e108a721679a8/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/aeb3c0c728b8faea617ee59afbd441af2f983111/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/a3ae4de1bb11c62ed37dd9c4cb6910d648e5d6fd/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/6d0e37475e13acddb69453f47dd6b25c8232dc6c/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/ec77eb68787a30380847aee451d64a06cb996596/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/0e6c085140e563804e7abb23dc98acb140ffc6e9/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/9bdda5fd7d837500e52a086421324264b9834a42/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/e798101e5e98559fa13a60f98e5f2ee0b316c82a/output/AndroidManifest.xml:29:5-20
+ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/71d2416f85bf81ac49565b72b7e6c19e398b033a/output/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/dc651ad9d47182a505411adbb5bf2108a3a2c6f4/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/90333afe0d72d5b6b1d3262b9880d1e38d5eb517/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/0cecb45bd3d5b972001f4f2e6b38978d2d6e8e78/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/c951491ecb80b94977bf8696f5905de6a3316ce7/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/243ac53fe8615ee3993b772549c9d7317489a91b/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/5b6ee6aaf9eb70a93c38b18b86a4a8511ec05809/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/59ccb3f11e76d391216fcde36e9df41dad0ffd2f/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/d1fc0f6630bf78ac8d231bbedd1186491ccaa750/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/89a03d2ba3c69be934eda09faec7a8dc693c711b/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/451c1d3164c428482a567704616901f297269d1b/output/AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:8:9-41
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:8:9-41
 	android:supportsRtl
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:10:9-35
 	android:roundIcon
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:9:9-54
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:9:9-54
 	android:allowBackup
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:6:9-35
 	android:icon
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:7:9-43
 	android:theme
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:11:9-40
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:11:9-40
 activity#com.example.barboza_countbook.MainActivity
-ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:12:9-21:20
+ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:12:9-21:20
 	android:label
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:14:13-45
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:14:13-45
 	android:theme
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:15:13-56
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:15:13-56
 	android:name
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:13:13-41
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:13:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:16:13-20:29
+ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:17:17-69
+ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:17:25-66
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:19:27-74
 activity#com.example.barboza_countbook.AddCounterActivity
-ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:22:9-56
+ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:22:9-56
 	android:name
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:22:19-53
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:22:19-53
 activity#com.example.barboza_countbook.EditCounterActivity
-ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:23:9-57
+ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:23:9-57
 	android:name
-		ADDED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml:23:19-54
+		ADDED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml:23:19-54
 uses-sdk
-INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/sharidanbarboza/.android/build-cache/098df4e429589553fe6d90fa6888a7ea6e8ef354/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/568f9506de4db5c95def3ddd102859e0434114cf/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/cb6c5c01bc40d5a298ec95f88429ce3841043066/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/fbea730bcb691f756aed0370061e108a721679a8/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/b678b6d626764a401deee345c0b3bd2f8a009b61/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/aeb3c0c728b8faea617ee59afbd441af2f983111/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/a3ae4de1bb11c62ed37dd9c4cb6910d648e5d6fd/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/6d0e37475e13acddb69453f47dd6b25c8232dc6c/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/ec77eb68787a30380847aee451d64a06cb996596/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/0e6c085140e563804e7abb23dc98acb140ffc6e9/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/9bdda5fd7d837500e52a086421324264b9834a42/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/e798101e5e98559fa13a60f98e5f2ee0b316c82a/output/AndroidManifest.xml:21:5-23:58
+INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/71d2416f85bf81ac49565b72b7e6c19e398b033a/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/dc651ad9d47182a505411adbb5bf2108a3a2c6f4/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/90333afe0d72d5b6b1d3262b9880d1e38d5eb517/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/0cecb45bd3d5b972001f4f2e6b38978d2d6e8e78/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/6fd9a34d85b36305b18196f936d4078a3664764a/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/c951491ecb80b94977bf8696f5905de6a3316ce7/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/243ac53fe8615ee3993b772549c9d7317489a91b/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/5b6ee6aaf9eb70a93c38b18b86a4a8511ec05809/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/59ccb3f11e76d391216fcde36e9df41dad0ffd2f/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/d1fc0f6630bf78ac8d231bbedd1186491ccaa750/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/89a03d2ba3c69be934eda09faec7a8dc693c711b/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/451c1d3164c428482a567704616901f297269d1b/output/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sharidanbarboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
+		INJECTED from /afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/568f9506de4db5c95def3ddd102859e0434114cf/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/cb6c5c01bc40d5a298ec95f88429ce3841043066/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/fbea730bcb691f756aed0370061e108a721679a8/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/b678b6d626764a401deee345c0b3bd2f8a009b61/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/aeb3c0c728b8faea617ee59afbd441af2f983111/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/a3ae4de1bb11c62ed37dd9c4cb6910d648e5d6fd/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/6d0e37475e13acddb69453f47dd6b25c8232dc6c/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/ec77eb68787a30380847aee451d64a06cb996596/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/0e6c085140e563804e7abb23dc98acb140ffc6e9/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/9bdda5fd7d837500e52a086421324264b9834a42/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/e798101e5e98559fa13a60f98e5f2ee0b316c82a/output/AndroidManifest.xml:25:5-27:41
+ADDED from [com.android.support:design:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/dc651ad9d47182a505411adbb5bf2108a3a2c6f4/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/90333afe0d72d5b6b1d3262b9880d1e38d5eb517/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/0cecb45bd3d5b972001f4f2e6b38978d2d6e8e78/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/6fd9a34d85b36305b18196f936d4078a3664764a/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:transition:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/c951491ecb80b94977bf8696f5905de6a3316ce7/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/243ac53fe8615ee3993b772549c9d7317489a91b/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/5b6ee6aaf9eb70a93c38b18b86a4a8511ec05809/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/59ccb3f11e76d391216fcde36e9df41dad0ffd2f/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/d1fc0f6630bf78ac8d231bbedd1186491ccaa750/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/89a03d2ba3c69be934eda09faec7a8dc693c711b/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/451c1d3164c428482a567704616901f297269d1b/output/AndroidManifest.xml:25:5-27:41
 	android:value
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/AndroidManifest.xml:27:9-38
+		ADDED from [com.android.support:design:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/AndroidManifest.xml:27:9-38
 	android:name
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:26.0.0-alpha1] /afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/AndroidManifest.xml:26:9-47

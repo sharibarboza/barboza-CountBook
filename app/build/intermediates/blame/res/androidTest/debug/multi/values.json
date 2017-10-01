@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/sharidanbarboza/.android/build-cache/ce8df9dd17248149c2726b4288fd23bf3208fc0e/output/res/values/values.xml",
+                    "file": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/f0d8ee8110bae39cdf449d0bb0650662a0260f12/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

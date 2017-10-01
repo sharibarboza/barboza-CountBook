@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/sharidanbarboza/barboza-CountBook/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/sharidanbarboza/barboza-CountBook/app/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/src/debug/shaders"/></dataSet></merger>

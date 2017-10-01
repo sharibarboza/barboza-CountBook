@@ -1,34 +1,34 @@
 [
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/568f9506de4db5c95def3ddd102859e0434114cf/output/res/drawable-v21/abc_edit_text_material.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/dc651ad9d47182a505411adbb5bf2108a3a2c6f4/output/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/res/drawable-v21/avd_show_password.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/568f9506de4db5c95def3ddd102859e0434114cf/output/res/drawable-v21/abc_btn_colored_material.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/res/drawable-v21/avd_show_password.xml"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/dc651ad9d47182a505411adbb5bf2108a3a2c6f4/output/res/drawable-v21/notification_action_background.xml"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/res/drawable-v21/avd_hide_password.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/dc651ad9d47182a505411adbb5bf2108a3a2c6f4/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/568f9506de4db5c95def3ddd102859e0434114cf/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/res/drawable-v21/design_password_eye.xml"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/833a91bdb160daba2eb7538a921084127146250c/output/res/drawable-v21/design_password_eye.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/1077950e2176c479f9f59245e26e654e52101738/output/res/drawable-v21/avd_hide_password.xml"
     },
     {
-        "merged": "/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/Users/sharidanbarboza/.android/build-cache/568f9506de4db5c95def3ddd102859e0434114cf/output/res/drawable-v21/notification_action_background.xml"
+        "merged": "/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/afs/ualberta.ca/home/b/a/barboza/.android/build-cache/dc651ad9d47182a505411adbb5bf2108a3a2c6f4/output/res/drawable-v21/abc_edit_text_material.xml"
     }
 ]

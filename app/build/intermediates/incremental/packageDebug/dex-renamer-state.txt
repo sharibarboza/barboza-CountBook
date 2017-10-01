@@ -1,7 +1,7 @@
-#Sat Sep 30 01:04:40 MDT 2017
-base.0=/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_99084f53ea040f87eaf3aeb8718ac3be6c209c51
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_627b0985e500cb7c486e755dce516ebc2cab1545/classes.dex
-base.1=/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_627b0985e500cb7c486e755dce516ebc2cab1545
-file.0=/Users/sharidanbarboza/barboza-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_99084f53ea040f87eaf3aeb8718ac3be6c209c51/classes.dex
+#Sat Sep 30 17:55:51 MDT 2017
+base.0=/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9786a24251d466d8ee17facb292f72d5b3d03489
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_caa92db5849fe08d8648009b6530d7c3611a6859/classes.dex
+base.1=/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_caa92db5849fe08d8648009b6530d7c3611a6859
+file.0=/afs/ualberta.ca/home/b/a/barboza/barboza-CountBook/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9786a24251d466d8ee17facb292f72d5b3d03489/classes.dex

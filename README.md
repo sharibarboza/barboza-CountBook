@@ -3,6 +3,9 @@ Assignment 1 for CMPUT 301, Fall 2017
 
 CountBook is a mobile app in Android to manage a set of counters. Consider the situation of someone who needs to count things. Perhaps those things are supplies being consumed like food or medicine, or people entering some event.
 
+## Video
+[Click here to see the app demo.](https://youtu.be/j-Md4LTQMPY)
+
 ## Features
 The app should allow the user to:
 
