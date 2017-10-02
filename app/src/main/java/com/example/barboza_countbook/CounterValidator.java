@@ -31,24 +31,30 @@ public final class CounterValidator {
      */
     public static boolean validate(Context context, EditText inputName, EditText inputValue,
                                    EditText inputCurrent) {
+        // Get the user's input values (either for adding or editing)
         boolean valid;
         String tempName = inputName.getText().toString();
         String tempInit = inputValue.getText().toString().trim();
         String tempCurrent = null;
 
+        // Check for edit activity only
         if (inputCurrent != null) {
             tempCurrent = inputCurrent.getText().toString().trim();
         }
 
         if (tempName.isEmpty()) {
+            // Check if counter name is empty
             String name_req_str = context.getString(R.string.name_required);
             Toast.makeText(context, name_req_str, Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (!validateValue(context, tempInit, "Initial ")) {
+            // Check for unacceptable integer values
             valid = false;
         } else if (tempCurrent != null && !validateValue(context, tempCurrent, "Current ")) {
+            // Check if current value edit is an unacceptable integer value
             valid = false;
         } else {
+            // All input fields are valid
             valid = true;
         }
         return valid;
@@ -66,14 +72,17 @@ public final class CounterValidator {
         boolean valid;
 
         if (value.isEmpty()) {
+            // Check if input is empty
             String val_req_str = context.getString(R.string.value_required);
             Toast.makeText(context, countType + val_req_str, Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (!isInteger(value)) {
+            // Check if input is not an integer
             String val_num_str = context.getString(R.string.is_num);
             Toast.makeText(context, countType + val_num_str, Toast.LENGTH_SHORT).show();
             valid = false;
         } else if (Integer.parseInt(value) < 0) {
+            // Check if input is negative
             String val_pos_str = context.getString(R.string.is_positive);
             Toast.makeText(context, countType + val_pos_str, Toast.LENGTH_SHORT).show();
             valid = false;
